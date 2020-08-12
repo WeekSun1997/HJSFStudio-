@@ -1,0 +1,14 @@
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.deps.json
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.dll
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.pdb
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.ORM.dll
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.ORM.pdb
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
+G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.csprojAssemblyReference.cache
+G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.AssemblyInfoInputs.cache
+G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.AssemblyInfo.cs
+G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.csproj.CoreCompileInputs.cache
+G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.csproj.CopyComplete
+G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.dll
+G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.pdb

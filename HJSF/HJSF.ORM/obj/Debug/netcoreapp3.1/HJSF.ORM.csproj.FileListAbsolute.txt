@@ -1,0 +1,11 @@
+G:\HJSFStudio--master\HJSF\HJSF.ORM\bin\Debug\netcoreapp3.1\HJSF.ORM.deps.json
+G:\HJSFStudio--master\HJSF\HJSF.ORM\bin\Debug\netcoreapp3.1\HJSF.ORM.runtimeconfig.json
+G:\HJSFStudio--master\HJSF\HJSF.ORM\bin\Debug\netcoreapp3.1\HJSF.ORM.runtimeconfig.dev.json
+G:\HJSFStudio--master\HJSF\HJSF.ORM\bin\Debug\netcoreapp3.1\HJSF.ORM.dll
+G:\HJSFStudio--master\HJSF\HJSF.ORM\bin\Debug\netcoreapp3.1\HJSF.ORM.pdb
+G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.AssemblyInfoInputs.cache
+G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.AssemblyInfo.cs
+G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.csproj.CoreCompileInputs.cache
+G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.dll
+G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.pdb
+G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.genruntimeconfig.cache

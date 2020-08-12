@@ -1,0 +1,14 @@
+G:\HJSFStudio--master\HJSF\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+G:\HJSFStudio--master\HJSF\Library\bin\Debug\netcoreapp3.1\Library.dll
+G:\HJSFStudio--master\HJSF\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+G:\HJSFStudio--master\HJSF\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+G:\HJSFStudio--master\HJSF\Library\bin\Debug\netcoreapp3.1\Library.pdb
+G:\HJSFStudio--master\HJSF\Library\obj\Debug\netcoreapp3.1\Library.dll
+G:\HJSFStudio--master\HJSF\Library\obj\Debug\netcoreapp3.1\Library.pdb
+G:\HJSFStudio--master\HJSF\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+G:\HJSFStudio--master\HJSF\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+G:\HJSFStudio--master\HJSF\Library\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
+G:\HJSFStudio--master\HJSF\Library\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+G:\HJSFStudio--master\HJSF\Library\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
+G:\HJSFStudio--master\HJSF\Library\bin\Debug\netcoreapp3.1\System.Data.SqlClient.xml
+G:\HJSFStudio--master\HJSF\Library\obj\Debug\netcoreapp3.1\Library.csproj.CopyComplete

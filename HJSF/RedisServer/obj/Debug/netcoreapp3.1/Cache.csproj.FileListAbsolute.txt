@@ -1,0 +1,16 @@
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\Cache.deps.json
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\Cache.dll
+G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.AssemblyInfoInputs.cache
+G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.AssemblyInfo.cs
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\Cache.pdb
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\Library.dll
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\Library.pdb
+G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.csprojAssemblyReference.cache
+G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.csproj.CoreCompileInputs.cache
+G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.csproj.CopyComplete
+G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.dll
+G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.pdb
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
+G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.xml

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "RepositoryServices/1.0.0": {
+        "dependencies": {
+          "Interface.ISqlSguar": "1.0.0"
+        },
+        "runtime": {
+          "RepositoryServices.dll": {}
+        }
+      },
+      "Interface.ISqlSguar/1.0.0": {
+        "runtime": {
+          "Interface.ISqlSguar.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RepositoryServices/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Interface.ISqlSguar/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

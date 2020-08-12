@@ -1,0 +1,9 @@
+G:\HJSFStudio--master\HJSF\HJSF.Enum\bin\Debug\netcoreapp3.1\HJSF.Enum.deps.json
+G:\HJSFStudio--master\HJSF\HJSF.Enum\bin\Debug\netcoreapp3.1\HJSF.Enum.dll
+G:\HJSFStudio--master\HJSF\HJSF.Enum\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb
+G:\HJSFStudio--master\HJSF\HJSF.Enum\obj\Debug\netcoreapp3.1\HJSF.Enum.AssemblyInfoInputs.cache
+G:\HJSFStudio--master\HJSF\HJSF.Enum\obj\Debug\netcoreapp3.1\HJSF.Enum.AssemblyInfo.cs
+G:\HJSFStudio--master\HJSF\HJSF.Enum\obj\Debug\netcoreapp3.1\HJSF.Enum.csproj.CoreCompileInputs.cache
+G:\HJSFStudio--master\HJSF\HJSF.Enum\obj\Debug\netcoreapp3.1\HJSF.Enum.dll
+G:\HJSFStudio--master\HJSF\HJSF.Enum\obj\Debug\netcoreapp3.1\HJSF.Enum.pdb
+G:\HJSFStudio--master\HJSF\HJSF.Enum\obj\Debug\netcoreapp3.1\HJSF.Enum.csprojAssemblyReference.cache

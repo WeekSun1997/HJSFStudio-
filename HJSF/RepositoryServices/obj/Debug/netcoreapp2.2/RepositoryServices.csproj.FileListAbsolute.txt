@@ -1,0 +1,13 @@
+G:\HJSF\HJSF\RepositoryServices\bin\Debug\netcoreapp2.2\RepositoryServices.deps.json
+G:\HJSF\HJSF\RepositoryServices\bin\Debug\netcoreapp2.2\RepositoryServices.dll
+G:\HJSF\HJSF\RepositoryServices\bin\Debug\netcoreapp2.2\RepositoryServices.pdb
+G:\HJSF\HJSF\RepositoryServices\bin\Debug\netcoreapp2.2\Interface.ISqlSguar.dll
+G:\HJSF\HJSF\RepositoryServices\bin\Debug\netcoreapp2.2\Interface.ISqlSguar.pdb
+G:\HJSF\HJSF\RepositoryServices\obj\Debug\netcoreapp2.2\RepositoryServices.csprojAssemblyReference.cache
+G:\HJSF\HJSF\RepositoryServices\obj\Debug\netcoreapp2.2\RepositoryServices.csproj.CoreCompileInputs.cache
+G:\HJSF\HJSF\RepositoryServices\obj\Debug\netcoreapp2.2\RepositoryServices.AssemblyInfoInputs.cache
+G:\HJSF\HJSF\RepositoryServices\obj\Debug\netcoreapp2.2\RepositoryServices.AssemblyInfo.cs
+G:\HJSF\HJSF\RepositoryServices\obj\Debug\netcoreapp2.2\RepositoryServices.csproj.CopyComplete
+G:\HJSF\HJSF\RepositoryServices\obj\Debug\netcoreapp2.2\RepositoryServices.dll
+G:\HJSF\HJSF\RepositoryServices\obj\Debug\netcoreapp2.2\RepositoryServices.pdb
+G:\HJSF\HJSF\RepositoryServices\bin\Debug\netcoreapp2.2\Interface.ISqlServer.dll

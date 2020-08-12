@@ -1,0 +1,12 @@
+G:\HJSFStudio--master\HJSF\HFJS.Entity\bin\Debug\netcoreapp3.1\HFJS.Entity.deps.json
+G:\HJSFStudio--master\HJSF\HFJS.Entity\bin\Debug\netcoreapp3.1\HFJS.Entity.dll
+G:\HJSFStudio--master\HJSF\HFJS.Entity\bin\Debug\netcoreapp3.1\HFJS.Entity.pdb
+G:\HJSFStudio--master\HJSF\HFJS.Entity\bin\Debug\netcoreapp3.1\HJSF.Enum.dll
+G:\HJSFStudio--master\HJSF\HFJS.Entity\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb
+G:\HJSFStudio--master\HJSF\HFJS.Entity\obj\Debug\netcoreapp3.1\HFJS.Entity.csprojAssemblyReference.cache
+G:\HJSFStudio--master\HJSF\HFJS.Entity\obj\Debug\netcoreapp3.1\HFJS.Entity.AssemblyInfoInputs.cache
+G:\HJSFStudio--master\HJSF\HFJS.Entity\obj\Debug\netcoreapp3.1\HFJS.Entity.AssemblyInfo.cs
+G:\HJSFStudio--master\HJSF\HFJS.Entity\obj\Debug\netcoreapp3.1\HFJS.Entity.csproj.CoreCompileInputs.cache
+G:\HJSFStudio--master\HJSF\HFJS.Entity\obj\Debug\netcoreapp3.1\HFJS.Entity.csproj.CopyComplete
+G:\HJSFStudio--master\HJSF\HFJS.Entity\obj\Debug\netcoreapp3.1\HFJS.Entity.dll
+G:\HJSFStudio--master\HJSF\HFJS.Entity\obj\Debug\netcoreapp3.1\HFJS.Entity.pdb

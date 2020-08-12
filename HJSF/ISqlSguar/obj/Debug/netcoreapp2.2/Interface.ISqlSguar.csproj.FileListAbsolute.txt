@@ -1,0 +1,8 @@
+G:\HJSF\HJSF\ISqlSguar\bin\Debug\netcoreapp2.2\Interface.ISqlSguar.deps.json
+G:\HJSF\HJSF\ISqlSguar\bin\Debug\netcoreapp2.2\Interface.ISqlSguar.dll
+G:\HJSF\HJSF\ISqlSguar\bin\Debug\netcoreapp2.2\Interface.ISqlSguar.pdb
+G:\HJSF\HJSF\ISqlSguar\obj\Debug\netcoreapp2.2\Interface.ISqlSguar.csproj.CoreCompileInputs.cache
+G:\HJSF\HJSF\ISqlSguar\obj\Debug\netcoreapp2.2\Interface.ISqlSguar.AssemblyInfoInputs.cache
+G:\HJSF\HJSF\ISqlSguar\obj\Debug\netcoreapp2.2\Interface.ISqlSguar.AssemblyInfo.cs
+G:\HJSF\HJSF\ISqlSguar\obj\Debug\netcoreapp2.2\Interface.ISqlSguar.dll
+G:\HJSF\HJSF\ISqlSguar\obj\Debug\netcoreapp2.2\Interface.ISqlSguar.pdb
