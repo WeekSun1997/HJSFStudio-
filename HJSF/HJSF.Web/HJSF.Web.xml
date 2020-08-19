@@ -4,5 +4,198 @@
         <name>HJSF.Web</name>
     </assembly>
     <members>
+        <member name="F:HJSF.Web.Controllers.BaseApiController`2._defaultService">
+            <summary>
+            默认使用接口
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.#ctor(`1)">
+            <summary>
+            初始化
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.Add(`0)">
+            <summary>
+            添加保存
+            </summary>
+            <param name="entity">实体</param>
+            <returns>新增结果</returns>
+        </member>
+        <member name="T:HJSF.Web.Controllers.DataBaseManagerController">
+            <summary>
+            数据库操作控制器
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.DataBaseManagerController._server">
+            <summary>
+            接口对象
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Controllers.DataBaseManagerController.#ctor(Interface.IDataBaseServer)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:HJSF.Web.Controllers.DataBaseManagerController.LoadDataTable">
+            <summary>
+            加载所有数据表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HJSF.Web.Controllers.SysUserController">
+            <summary>
+            用户操作控制器
+            </summary>
+        </member>
+        <member name="T:HJSF.Web.Model.ResponseModel">
+            <summary>
+            返回信息类
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponseModel.Msg">
+            <summary>
+            返回异常信息
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponseModel.Code">
+            <summary>
+            返回状态
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Model.ResponseModel.#ctor(System.String,HJSF.Enum.ResponseCode)">
+            <summary>
+            无返回数据实体
+            </summary>
+            <param name="Msg"></param>
+            <param name="code"></param>
+        </member>
+        <member name="T:HJSF.Web.Model.ResponseModel`1">
+            <summary>
+            有数据返回实体
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponseModel`1.Msg">
+            <summary>
+            返回异常信息
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponseModel`1.Code">
+            <summary>
+            返回状态
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponseModel`1.Data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Model.ResponseModel`1.#ctor(System.String,HJSF.Enum.ResponseCode,`0)">
+            <summary>
+            返回数据实体
+            </summary>
+            <param name="Msg"></param>
+            <param name="code"></param>
+        </member>
+        <member name="T:HJSF.Web.Model.TableEntity">
+            <summary>
+            数据库表实体
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.ColumnName">
+            <summary>
+            列名
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.Identity">
+            <summary>
+            是否自增长
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.Key">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.IsNullable">
+            <summary>
+            是否为空
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.TableEntity.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:HJSF.Web.Program">
+            <summary>
+            启动类
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Program.Main(System.String[])">
+            <summary>
+            入口函数
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:HJSF.Web.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HJSF.Web.Startup">
+            <summary>
+            启动类
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:HJSF.Web.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            注入方法
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:HJSF.Web.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            注册服务
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:HJSF.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
     </members>
 </doc>

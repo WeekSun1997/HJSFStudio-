@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cache
 {
-    public class RedisHelp:ICache
+    public class RedisHelp : ICache
     {
         public string _connectionString;
 
@@ -16,11 +16,11 @@ namespace Cache
 
         public ConnectionMultiplexer redisConnection;
         public RedisHelp() { }
-        public RedisHelp(string connectionString, int defaultDB = 0)
+        public RedisHelp(string connectionString)
         {
             _connectionString = connectionString;
 
-            _defaultDB = defaultDB;
+            _defaultDB = 0;
 
         }
 

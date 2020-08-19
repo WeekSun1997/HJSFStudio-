@@ -9,11 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HFJS.Entity\HFJS.Entity.csproj" />
+    <ProjectReference Include="..\HJSF.AOP\HJSF.AOP.csproj" />
+    <ProjectReference Include="..\HJSF.Enum\HJSF.Enum.csproj" />
+    <ProjectReference Include="..\Interface\Interface.csproj" />
+    <ProjectReference Include="..\Middleware\Middleware.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
     <ProjectReference Include="..\Utility\Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\layuiadmin\userJs\login\" />
   </ItemGroup>
 
 

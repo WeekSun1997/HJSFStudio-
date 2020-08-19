@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryServices
 {
-    public interface IBaseRepository : IDBServices
+    public interface IBaseRepository<T> : IDBServices where T:class
     {
         /// <summary>
         /// 操作之前

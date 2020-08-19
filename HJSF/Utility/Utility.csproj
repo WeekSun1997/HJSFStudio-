@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HJSF.Enum\HJSF.Enum.csproj" />
     <ProjectReference Include="..\RedisServer\Cache.csproj" />
   </ItemGroup>
 

@@ -10,12 +10,11 @@ namespace Interface.ISqlSguar
 {
     public class DBServices : IDBServices
     {
-        public  string ConnectionString { get; set; }
-
+        public string ConnectionString { get; set; }
         public DBServices() { }
-        public DBServices(string ConnectionString)
+        public DBServices(string _ConnectionString)
         {
-            this.ConnectionString = ConnectionString;
+            ConnectionString = _ConnectionString;
         }
         public SqlConnection connection;
 

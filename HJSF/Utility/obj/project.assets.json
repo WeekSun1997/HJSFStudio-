@@ -333,6 +333,16 @@
           "bin/placeholder/Cache.dll": {}
         }
       },
+      "HJSF.Enum/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/HJSF.Enum.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HJSF.Enum.dll": {}
+        }
+      },
       "HJSF.ISqlServer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1021,6 +1031,11 @@
       "path": "../RedisServer/Cache.csproj",
       "msbuildProject": "../RedisServer/Cache.csproj"
     },
+    "HJSF.Enum/1.0.0": {
+      "type": "project",
+      "path": "../HJSF.Enum/HJSF.Enum.csproj",
+      "msbuildProject": "../HJSF.Enum/HJSF.Enum.csproj"
+    },
     "HJSF.ISqlServer/1.0.0": {
       "type": "project",
       "path": "../ISqlSguar/HJSF.ISqlServer.csproj",
@@ -1035,6 +1050,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Cache >= 1.0.0",
+      "HJSF.Enum >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 3.1.7"
     ]
   },
@@ -1068,6 +1084,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj": {
+              "projectPath": "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj"
+            },
             "G:\\HJSFStudio--master\\HJSF\\RedisServer\\Cache.csproj": {
               "projectPath": "G:\\HJSFStudio--master\\HJSF\\RedisServer\\Cache.csproj"
             }

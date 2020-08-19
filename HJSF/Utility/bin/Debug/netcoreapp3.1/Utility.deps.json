@@ -9,6 +9,7 @@
       "Utility/1.0.0": {
         "dependencies": {
           "Cache": "1.0.0",
+          "HJSF.Enum": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "3.1.7"
         },
         "runtime": {
@@ -271,6 +272,11 @@
           "Cache.dll": {}
         }
       },
+      "HJSF.Enum/1.0.0": {
+        "runtime": {
+          "HJSF.Enum.dll": {}
+        }
+      },
       "HJSF.ISqlServer/1.0.0": {
         "runtime": {
           "HJSF.ISqlServer.dll": {}
@@ -463,6 +469,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "Cache/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HJSF.Enum/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

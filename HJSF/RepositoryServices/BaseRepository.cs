@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryServices
 {
-    public class BaseRepository : DBServices, IBaseRepository
+    public class BaseRepository<T> : DBServices, IBaseRepository<T> where T : class, new()
     {
         public HJSFContext _dbContext { get; set; }
         public BaseRepository()
@@ -285,7 +285,7 @@ namespace RepositoryServices
         {
             using (_dbContext = new HJSFContext())
             {
-               return  _dbContext.Set<T>().ToList();
+                return _dbContext.Set<T>().ToList();
             }
         }
     }

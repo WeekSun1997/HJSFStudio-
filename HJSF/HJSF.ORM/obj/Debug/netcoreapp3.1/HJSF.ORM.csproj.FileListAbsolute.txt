@@ -9,3 +9,4 @@ G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.csproj.Core
 G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.dll
 G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.pdb
 G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.genruntimeconfig.cache
+G:\HJSFStudio--master\HJSF\HJSF.ORM\obj\Debug\netcoreapp3.1\HJSF.ORM.csprojAssemblyReference.cache
