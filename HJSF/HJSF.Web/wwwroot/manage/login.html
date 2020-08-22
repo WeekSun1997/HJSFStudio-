@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>登录 ——汉江示范后台管理系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../../layui/css/layui.css" rel="stylesheet" media="all" />
+    <link href="../../css/login.css" rel="stylesheet" media="all" />
+    <style>
+        #loginForm {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: box;
+            display: flex;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -o-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-box-pack: distribute;
+            -moz-box-pack: distribute;
+            -o-box-pack: distribute;
+            -ms-flex-pack: distribute;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            background: #fff;
+            height: 394px;
+            border-radius: 10px;
+        }
+
+        .loginPic {
+            width: 200px;
+        }
+
+        .loginbox ul {
+            margin: 0;
+        }
+
+            .loginbox ul li:last-child {
+                margin: 0;
+            }
+
+    </style>
+</head>
+<body class="main" style="background-position: -280.8px 0px;">
+    <div id="mainBody">
+        <div id="cloud1" class="cloud" style="background-position: 891.1px 100px;"></div>
+        <div id="cloud2" class="cloud" style="background-position: 401px 460px;"></div>
+    </div>
+
+    <div class="loginbody">
+        <span class="systemlogo"></span>
+        <div class="loginbox">
+            <form class="layui-form" id="loginForm">
+                <div class="pclogo">
+                    <img class="loginPic" src="/images/logo.png" />
+                </div>
+                <div>
+                    <ul>
+                        <li class="mplogo">
+                            <img src="/images/logo1.png" />
+                        </li>
+                        <li>
+                            <span class="layui-icon layui-icon-username"></span>
+                            <input name="userName" type="text" class="layui-input" value="" placeholder="用户名" lay-verify="required" autocomplete="off" lay-verType="tips" lay-reqText="用户名不能为空">
+                        </li>
+                        <li>
+                            <span class="layui-icon layui-icon-password"></span>
+                            <input name="passWord" type="password" value="" class="layui-input" placeholder="密码" lay-verify="required" lay-verType="tips" lay-reqText="密码不能为空">
+                        </li>
+                        <li>
+                            <span class="layui-icon layui-icon-vercode"></span>
+                            <input name="verify" type="text" value="" class="layui-input loginverify" placeholder="验证码" lay-verify="required" autocomplete="off" maxlength="4" lay-verType="tips" lay-reqText="验证码不能为空">
+                            <img class="logincaptcha" src="/v1/sysuser/GetVerify" />
+                        </li>
+                        <li>
+                            <button class="layui-btn loginbtn" lay-submit lay-filter="login">登 录</button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="loginbm">版权所有 @2020 汉江师范工作室</div>
+    <script src="../../layui/layui.js"></script>
+    <script>
+        layui.config({
+            base: '/layuiadmin/'
+        }).use('login', layui.factory('login'));
+    </script>
+</body>
+</html> 

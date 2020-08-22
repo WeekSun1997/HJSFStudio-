@@ -12,9 +12,9 @@ G:\HJSFStudio--master\HJSF\Utility\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
 G:\HJSFStudio--master\HJSF\Utility\bin\Debug\netcoreapp3.1\Library.pdb
 G:\HJSFStudio--master\HJSF\Utility\bin\Debug\netcoreapp3.1\System.Data.SqlClient.xml
 G:\HJSFStudio--master\HJSF\Utility\obj\Debug\netcoreapp3.1\Utility.csprojAssemblyReference.cache
-G:\HJSFStudio--master\HJSF\Utility\obj\Debug\netcoreapp3.1\Utility.csproj.CoreCompileInputs.cache
 G:\HJSFStudio--master\HJSF\Utility\obj\Debug\netcoreapp3.1\Utility.csproj.CopyComplete
 G:\HJSFStudio--master\HJSF\Utility\obj\Debug\netcoreapp3.1\Utility.dll
 G:\HJSFStudio--master\HJSF\Utility\obj\Debug\netcoreapp3.1\Utility.pdb
 G:\HJSFStudio--master\HJSF\Utility\bin\Debug\netcoreapp3.1\HJSF.Enum.dll
 G:\HJSFStudio--master\HJSF\Utility\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb
+G:\HJSFStudio--master\HJSF\Utility\obj\Debug\netcoreapp3.1\Utility.csproj.CoreCompileInputs.cache

@@ -1,21 +1,29 @@
 ﻿using HJSF.ORM.Models;
 using Interface.ISqlSguar;
 using ISqlSguar;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace RepositoryServices
 {
-    public class BaseRepository<T> : DBServices, IBaseRepository<T> where T : class, new()
+    public class BaseRepository : IBaseRepository
     {
         public HJSFContext _dbContext { get; set; }
+
         public BaseRepository()
         {
 
         }
+
+        
+       
+
+       
         /// <summary>
         /// 修改
         /// </summary>
@@ -54,27 +62,6 @@ namespace RepositoryServices
                 return await _dbContext.SaveChangesAsync() > 0;
             }
         }
-        /// <summary>
-        /// Sql语句执行返回bool 可重写
-        /// </summary>
-        /// <param name="sql"></param>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-        public new virtual bool ExceNoQuery(string sql, ref string msg)
-        {
-            return base.ExceNoQuery(sql, ref msg);
-        }
-
-        /// <summary>
-        /// 异步执行Sql 返回bool
-        /// </summary>
-        /// <param name="sql"></param>
-        /// <returns></returns>
-        public new virtual Task<bool> ExceNoQueryAsync(string sql)
-        {
-            return base.ExceNoQueryAsync(sql);
-        }
-
         /// <summary>
         /// 添加数据
         /// </summary>
@@ -129,27 +116,7 @@ namespace RepositoryServices
         {
             return "";
         }
-        /// <summary>
-        /// 执行sql返回dataset
-        /// </summary>
-        /// <param name="Sql"></param>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-        public new virtual DataSet QuerySetSql(string Sql, ref string msg)
-        {
 
-            return base.QuerySetSql(Sql, ref msg);
-        }
-        /// <summary>
-        /// 执行sql返回datatable
-        /// </summary>
-        /// <param name="Sql"></param>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-        public new virtual DataTable QueryTableSql(string Sql, ref string msg)
-        {
-            return base.QueryTableSql(Sql, ref msg);
-        }
         /// <summary>
         /// 删除数据
         /// </summary>
@@ -193,100 +160,13 @@ namespace RepositoryServices
         /// <param name="Sql"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public new virtual bool TransactionExec(string Sql, ref string msg)
-        {
-            return base.TransactionExec(Sql, ref msg);
-        }
-
-
-        /// <summary>
-        /// 事务执行操作
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="action"></param>
-        /// <param name="t"></param>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-
-        public bool TransactionImplement<T>(Func<T, bool> action, T t, ref string msg) where T : class
+        public async Task<List<T>> Query<T>() where T : class
         {
             using (_dbContext = new HJSFContext())
             {
-                using (var tran = _dbContext.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        msg = OnBefore();
-                        if (!string.IsNullOrEmpty(msg))
-                        {
-                            tran.Rollback();
-                            return false;
-                        }
-                        if (action(t))
-                        {
-                            msg = OnAlert();
-                            if (!string.IsNullOrEmpty(msg))
-                            {
-                                tran.Rollback();
-                                return false;
-                            }
-                            tran.Commit();
-                            return true;
-                        }
-                        tran.Rollback();
-                        return false;
-                    }
-                    catch (Exception ex)
-                    {
-                        msg = ex.Message;
-                        tran.Rollback();
-                        return false;
-                    }
-                }
-            }
-        }
-        /// <summary>
-        /// 异步执行事务
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="action"></param>
-        /// <param name="t"></param>
-        /// <returns></returns>
-        public async Task<bool> TransactionImplementAsync<T>(Func<T, bool> action, T t) where T : class
-        {
-            using (_dbContext = new HJSFContext())
-            {
-                using (var tran = await _dbContext.Database.BeginTransactionAsync())
-                {
-                    string msg = OnBefore();
-                    if (!string.IsNullOrEmpty(msg))
-                    {
-                        tran.Rollback();
-                        return false;
-                    }
-                    if (action(t))
-                    {
-                        msg = OnAlert();
-                        if (!string.IsNullOrEmpty(msg))
-                        {
-                            tran.Rollback();
-                            return false;
-                        }
-                        tran.Commit();
-                        return true;
-                    }
-                    tran.Rollback();
-                    return false;
-                }
+                return await _dbContext.Set<T>().ToListAsync();
             }
         }
 
-        public List<T> Query<T>() where T : class
-        {
-            using (_dbContext = new HJSFContext())
-            {
-                return _dbContext.Set<T>().ToList();
-            }
-        }
     }
 }

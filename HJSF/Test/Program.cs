@@ -12,8 +12,8 @@ namespace Test
         {
             BaseRepository br = new BaseRepository();
             string msg = "";
-            DataTable dt = br.QueryTableSql("select * from hjsf_sysuser", ref msg);
-            Console.WriteLine(dt.Rows[0]["UserName"]);
+            
+           
             //var list = br.Query<HjsfSysUser>();
             //Console.WriteLine(list.FirstOrDefault().UserName);
             //HJSFContext c = new HJSFContext();

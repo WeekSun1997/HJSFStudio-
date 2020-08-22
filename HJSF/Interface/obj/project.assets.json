@@ -845,7 +845,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
@@ -1929,7 +1929,8 @@
         "dependencies": {
           "Cache": "1.0.0",
           "HJSF.Enum": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "3.1.7"
+          "Microsoft.Extensions.DependencyInjection": "3.1.7",
+          "System.Drawing.Common": "4.7.0"
         },
         "compile": {
           "bin/placeholder/Utility.dll": {}

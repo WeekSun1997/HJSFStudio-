@@ -4,7 +4,7 @@ using System;
 
 namespace Services
 {
-    public class BaseServer<T> : BaseRepository<T>, IBaseServer<T> where T : class, new()
+    public class BaseServer<T> : IBaseServer<T> where T : class, new()
     {
     }
 }

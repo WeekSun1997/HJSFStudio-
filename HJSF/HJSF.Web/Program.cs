@@ -30,6 +30,13 @@ namespace HJSF.Web
         /// <returns></returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(loggingBuilder =>
+                {
+                    loggingBuilder.AddFilter("System", LogLevel.Warning);   //过滤系统日志
+                    loggingBuilder.AddFilter("Microsoft", LogLevel.Warning);
+                    var path = System.IO.Directory.GetCurrentDirectory();
+                    loggingBuilder.AddLog4Net($"{path}/Properties/log4net.config");//配置文件
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

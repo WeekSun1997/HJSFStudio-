@@ -1,17 +1,14 @@
 ﻿using ISqlSguar;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RepositoryServices
 {
-    public interface IBaseRepository<T> : IDBServices where T:class
+    public interface IBaseRepository  
     {
-        /// <summary>
-        /// 操作之前
-        /// </summary>
-        /// <returns></returns>
         string OnBefore();
         /// <summary>
         /// 操作之后
@@ -22,7 +19,6 @@ namespace RepositoryServices
         /// 更新之前操作
         /// </summary>
         /// <returns></returns>
-
 
         /// <summary>
         /// 插入数据
@@ -66,20 +62,13 @@ namespace RepositoryServices
         /// <param name="t"></param>
         /// <returns></returns>
         Task<bool> RemoveAsync<T>(T t) where T : class;
+  
+
         /// <summary>
-        /// 泛型事务执行方法
+        /// EF查询集合
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="t"></param>
         /// <returns></returns>
-        bool TransactionImplement<T>(Func<T, bool> action, T t, ref string msg) where T : class;
-        /// <summary>
-        /// 事务执行方法
-        /// </summary>
-        /// <param name="t"></param>
-        /// <returns></returns>
-        Task<bool> TransactionImplementAsync<T>(Func<T, bool> action, T t) where T : class;
-
-        List<T> Query<T>() where T : class;
+        Task<List<T>> Query<T>() where T : class;
     }
 }

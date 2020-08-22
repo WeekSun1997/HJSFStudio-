@@ -6,8 +6,10 @@ using HFJS.Entity.ResponseModel;
 using HJSF.ORM.Models;
 using HJSF.Web.Model;
 using Interface;
+using ISqlSguar;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RepositoryServices;
 using Services;
 
 namespace HJSF.Web.Controllers
@@ -24,22 +26,32 @@ namespace HJSF.Web.Controllers
         /// </summary>
         public IDataBaseServer _server;
         /// <summary>
+        /// 数据库对象
+        /// </summary>
+        public IBaseRepository _repository;
+
+      
+        /// <summary>
         /// 构造方法
         /// </summary>
         /// <param name="service"></param>
-        public DataBaseManagerController(IDataBaseServer service)
+        public DataBaseManagerController(IDataBaseServer service, IBaseRepository repository)
         {
             _server = service;
+            _repository = repository;
+        
         }
         /// <summary>
         /// 加载所有数据表
         /// </summary>
         /// <returns></returns>
-       [HttpGet("LoadTable")]
-        public  Task<ResponseModel<List<TableEntity>>> LoadDataTable()
+        [HttpGet("LoadTable")]
+        public Task<ResponseModel<List<TableEntity>>> LoadDataTable()
         {
-             string msg = "";
-           var table=  _server.QueryTableSql("select * from HJSF_SysUser", ref msg);
+            string msg = "";
+           
+            var s = _repository.Query<HjsfSysUser>();
+          
             return null;
         }
 

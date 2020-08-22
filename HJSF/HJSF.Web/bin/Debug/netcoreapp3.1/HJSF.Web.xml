@@ -15,13 +15,6 @@
             </summary>
             <param name="service"></param>
         </member>
-        <member name="M:HJSF.Web.Controllers.BaseApiController`2.Add(`0)">
-            <summary>
-            添加保存
-            </summary>
-            <param name="entity">实体</param>
-            <returns>新增结果</returns>
-        </member>
         <member name="T:HJSF.Web.Controllers.DataBaseManagerController">
             <summary>
             数据库操作控制器
@@ -32,7 +25,12 @@
             接口对象
             </summary>
         </member>
-        <member name="M:HJSF.Web.Controllers.DataBaseManagerController.#ctor(Interface.IDataBaseServer)">
+        <member name="F:HJSF.Web.Controllers.DataBaseManagerController._repository">
+            <summary>
+            数据库对象
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Controllers.DataBaseManagerController.#ctor(Interface.IDataBaseServer,RepositoryServices.IBaseRepository)">
             <summary>
             构造方法
             </summary>
@@ -48,6 +46,12 @@
             <summary>
             用户操作控制器
             </summary>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysUserController.GetVerify(System.String)">
+            <summary>
+            获取图片验证码
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:HJSF.Web.Model.ResponseModel">
             <summary>

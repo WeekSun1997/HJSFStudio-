@@ -1269,7 +1269,8 @@
         "dependencies": {
           "Cache": "1.0.0",
           "HJSF.Enum": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "3.1.7"
+          "Microsoft.Extensions.DependencyInjection": "3.1.7",
+          "System.Drawing.Common": "4.7.0"
         },
         "runtime": {
           "Utility.dll": {}
