@@ -4,16 +4,49 @@
         <name>HJSF.Web</name>
     </assembly>
     <members>
+        <member name="T:HJSF.Web.Controllers.BaseApiController`2">
+            <summary>
+            基础控制器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TService"></typeparam>
+        </member>
         <member name="F:HJSF.Web.Controllers.BaseApiController`2._defaultService">
             <summary>
             默认使用接口
             </summary>
         </member>
-        <member name="M:HJSF.Web.Controllers.BaseApiController`2.#ctor(`1)">
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.#ctor(`1,RepositoryServices.IBaseRepository,ISqlSguar.IDBServices,Cache.ICache)">
             <summary>
-            初始化
+             初始化
             </summary>
             <param name="service"></param>
+            <param name="base"></param>
+            <param name="db"></param>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.AddEntity``1(``0,System.String@)">
+            <summary>
+            同步添加方法
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="t"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.AddEntityAsync``1(``0)">
+            <summary>
+            异步添加
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="T"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.FisrtEntityAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            条件获取第一条数据
+            </summary>
+            <param name="WhereExpression"></param>
+            <returns></returns>
         </member>
         <member name="T:HJSF.Web.Controllers.DataBaseManagerController">
             <summary>
@@ -47,11 +80,66 @@
             用户操作控制器
             </summary>
         </member>
+        <member name="F:HJSF.Web.Controllers.SysUserController._server">
+            <summary>
+             业务接口
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.SysUserController._db">
+            <summary>
+            数据库接口
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.SysUserController._baseRepository">
+            <summary>
+            EF接口
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.SysUserController._cache">
+            <summary>
+            缓存接口
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysUserController.#ctor(Interface.ISysUserServer,RepositoryServices.IBaseRepository,ISqlSguar.IDBServices,Cache.ICache)">
+            <summary>
+            
+            </summary>
+            <param name="server"></param>
+            <param name="base"></param>
+            <param name="dB"></param>
+            <param name="cache"></param>
+        </member>
         <member name="M:HJSF.Web.Controllers.SysUserController.GetVerify(System.String)">
             <summary>
             获取图片验证码
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysUserController.Login(HJSF.Web.Model.Login.SysLoginEntity)">
+            <summary>
+            登录方法-设置token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HJSF.Web.Model.Login.SysLoginEntity">
+            <summary>
+            用户登录实体
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.Login.SysLoginEntity.UserName">
+            <summary>
+            登录账号
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.Login.SysLoginEntity.Password">
+            <summary>
+            用户密码
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.Login.SysLoginEntity.Verify">
+            <summary>
+            验证码
+            </summary>
         </member>
         <member name="T:HJSF.Web.Model.ResponseModel">
             <summary>

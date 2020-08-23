@@ -51,8 +51,9 @@ namespace HJSF.Web
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IBaseRepository, BaseRepository>();
             services.AddSingleton<IDBServices, DBServices>(x => new DBServices(Configuration["AppSetting:DataBase:ContextConn"]));
+            services.AddScoped<IBaseRepository, BaseRepository>(x=>new BaseRepository(Configuration["AppSetting:DataBase:ContextConn"]));
+            
             services.AddControllers();
             services.AddAuthentication(x =>
             {

@@ -49,8 +49,8 @@ namespace HJSF.Web.Controllers
         public Task<ResponseModel<List<TableEntity>>> LoadDataTable()
         {
             string msg = "";
-           
-            var s = _repository.Query<HjsfSysUser>();
+            var ds = _repository.QueryTableSql("select * from Hjsf_SysUser", ref msg);
+          
           
             return null;
         }

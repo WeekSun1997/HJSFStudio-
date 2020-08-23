@@ -16,11 +16,11 @@ namespace Middleware
         private readonly ILogger logger;
         private IWebHostEnvironment environment;
 
-        public ExceptionMiddleware(RequestDelegate _next, IWebHostEnvironment _environment)
+        public ExceptionMiddleware(RequestDelegate _next, IWebHostEnvironment _environment,ILogger<ExceptionMiddleware> _logger)
         {
             this.next = _next;
             this.environment = _environment;
-
+            this.logger = _logger;
         }
 
         public async Task Invoke(HttpContext context)
@@ -55,7 +55,9 @@ namespace Middleware
             if (environment.IsDevelopment())
             {
                 var json = new { code = 500, message = e.Message, detail = error };
+              
                 error = Other.JsonToString(json);
+                logger.LogError(e,"系统异常");
 
             }
             else

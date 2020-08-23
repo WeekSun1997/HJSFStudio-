@@ -24,3 +24,5 @@ G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Cache.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Library.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Utility.pdb
+G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\System.Data.SqlClient.xml
