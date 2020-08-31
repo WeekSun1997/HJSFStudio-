@@ -16,7 +16,7 @@ namespace Middleware
         private readonly ILogger logger;
         private IWebHostEnvironment environment;
 
-        public ExceptionMiddleware(RequestDelegate _next, IWebHostEnvironment _environment,ILogger<ExceptionMiddleware> _logger)
+         public ExceptionMiddleware(RequestDelegate _next, IWebHostEnvironment _environment,ILogger<ExceptionMiddleware> _logger)
         {
             this.next = _next;
             this.environment = _environment;

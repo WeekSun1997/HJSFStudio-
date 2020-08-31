@@ -6,12 +6,16 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Cache;
 using HFJS.Entity.ResponseModel;
+using HJSF.ORM.Models;
+using HJSF.RepositoryServices;
 using Interface;
 using ISqlSguar;
 using log4net.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryServices;
+using Services;
 
 namespace HJSF.Web.Controllers
 {
@@ -22,7 +26,7 @@ namespace HJSF.Web.Controllers
     /// <typeparam name="TService"></typeparam>
     [Route("api/[controller]")]
     [ApiController]
-
+   
     public class BaseApiController<T, TService> : ControllerBase
         where T : class, new()
         where TService : IBaseServer<T>
@@ -38,6 +42,7 @@ namespace HJSF.Web.Controllers
 
         private ICache _cache;
 
+   
         /// <summary>
         ///  初始化
         /// </summary>
@@ -59,18 +64,9 @@ namespace HJSF.Web.Controllers
         /// <param name="t"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public bool AddEntity<TEntity>(TEntity t, out string msg) where TEntity : class
+        public ResultHelp AddEntity<TEntity>(TEntity t) where TEntity : class
         {
-            try
-            {
-                msg = "";
                 return _baseRepository.Insert<TEntity>(t);
-            }
-            catch (Exception ex)
-            {
-                msg = ex.Message;
-                return false;
-            }
         }
         /// <summary>
         /// 异步添加
@@ -78,19 +74,20 @@ namespace HJSF.Web.Controllers
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="T"></param>
         /// <returns></returns>
-        public async Task<bool> AddEntityAsync<TEntity>(TEntity T) where TEntity : class
+        public async Task<ResultHelp> AddEntityAsync<TEntity>(TEntity T) where TEntity : class
         {
-            return await _baseRepository.InsertAsync<TEntity>(T) > 0;
+            return await _baseRepository.InsertAsync<TEntity>(T) ;
         }
         /// <summary>
         /// 条件获取第一条数据
         /// </summary>
         /// <param name="WhereExpression"></param>
         /// <returns></returns>
-        public async Task<T> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class
+        public async Task<ResultHelp<T>> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class
         {
 
             return await _baseRepository.FisrtEntityAsync<T>(WhereExpression);
         }
+      
     }
 }

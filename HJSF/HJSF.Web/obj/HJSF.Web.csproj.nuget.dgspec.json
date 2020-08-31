@@ -576,6 +576,9 @@
             "projectReferences": {
               "G:\\HJSFStudio--master\\HJSF\\Library\\Library.csproj": {
                 "projectPath": "G:\\HJSFStudio--master\\HJSF\\Library\\Library.csproj"
+              },
+              "G:\\HJSFStudio--master\\HJSF\\Services\\Services.csproj": {
+                "projectPath": "G:\\HJSFStudio--master\\HJSF\\Services\\Services.csproj"
               }
             }
           }
@@ -589,6 +592,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[3.1.7, )"
@@ -715,6 +722,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj": {
+                "projectPath": "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj"
+              },
               "G:\\HJSFStudio--master\\HJSF\\HJSF.ORM\\HJSF.ORM.csproj": {
                 "projectPath": "G:\\HJSFStudio--master\\HJSF\\HJSF.ORM\\HJSF.ORM.csproj"
               },

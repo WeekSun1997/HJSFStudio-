@@ -413,6 +413,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj": {
+                "projectPath": "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj"
+              },
               "G:\\HJSFStudio--master\\HJSF\\HJSF.ORM\\HJSF.ORM.csproj": {
                 "projectPath": "G:\\HJSFStudio--master\\HJSF\\HJSF.ORM\\HJSF.ORM.csproj"
               },

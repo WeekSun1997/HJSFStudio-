@@ -7,9 +7,13 @@ using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
 using Cache;
 using HJSF.AOP;
+using HJSF.Enum;
+using HJSF.RepositoryServices;
 using Interface.ISqlSguar;
 using ISqlSguar;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +24,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Middleware;
+using Middleware.JwtMiddleware;
 using RepositoryServices;
 using Utility;
 namespace HJSF.Web
@@ -51,28 +57,21 @@ namespace HJSF.Web
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // 缓存基本信息
+            services.Configure<AppSettingModel>(Configuration.GetSection("AppSetting"));
+            services.AddScoped<IAuthorizationHandler, Middleware.JwtBearerHandler>();
+            Constant.AppSetting = Configuration.GetSection("AppSetting").Get<AppSettingModel>();
+
             services.AddSingleton<IDBServices, DBServices>(x => new DBServices(Configuration["AppSetting:DataBase:ContextConn"]));
-            services.AddScoped<IBaseRepository, BaseRepository>(x=>new BaseRepository(Configuration["AppSetting:DataBase:ContextConn"]));
-            
+            services.AddScoped<IBaseRepository, BaseRepository>(x => new BaseRepository(Configuration["AppSetting:DataBase:ContextConn"]));
+
             services.AddControllers();
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["AppSetting:Jwt:JwtSecurityKey"])),
-                    ValidIssuer = Configuration["AppSetting:Jwt:JwtIssuer"],
-                    ValidAudience = Configuration["AppSetting:Jwt:JwtAudience"],
-                    ValidateIssuer = false,
-                    ValidateAudience = false
-                };
-            });
+            services.AddMemoryCache();
+            #region Jwt
+           
+
+            #endregion
             // 添加跨域控制
             services.AddCors(options =>
             {
@@ -94,19 +93,44 @@ namespace HJSF.Web
                 options.IdleTimeout = TimeSpan.FromSeconds(30);
                 options.Cookie.HttpOnly = true;
             });
+          
             services.AddControllersWithViews()
-           .AddControllersAsServices();//这里要写
+         .AddControllersAsServices();//这里要写
+            services.AddJwtBearer(Constant.AppSetting);
             services.AddSwaggerGen(option =>
             {
                 option.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
                     Title = "Web接口",
                     Version = "版本1"
+
                 });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 // 启用xml注释. 该方法第二个参数启用控制器的注释，默认为false.
                 option.IncludeXmlComments(xmlPath, true);
+                var securityScheme = new OpenApiSecurityScheme()
+                {
+                    Description = "在下框中输入请求Header中需要添加的JWT授权代码：Bearer {token}",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    BearerFormat = "JWT",
+                    Scheme = "Bearer"
+                };
+                option.AddSecurityDefinition("Bearer", securityScheme);
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
+                });
             });
         }
         /// <summary>
@@ -117,14 +141,6 @@ namespace HJSF.Web
         {
 
             builder.RegisterType<RedisAOP>();
-
-            ////数据库注入
-            //builder.RegisterType<DBServices>()
-            //       .As<IDBServices>()
-            //       .WithParameter("ConnectionString", Configuration["AppSetting:DataBase:ContextConn"])
-            //       .PropertiesAutowired()//开始属性注入
-            //       .InstancePerLifetimeScope();//即为每一个依赖或调用创建一个单一的共享的实例
-            //Redis注入
             builder.RegisterType<RedisHelp>()
                 .As<ICache>()
                  .WithParameter("_connectionString", Configuration["AppSetting:Redis:RedisHostConnection"])
@@ -159,6 +175,7 @@ namespace HJSF.Web
         /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -178,10 +195,16 @@ namespace HJSF.Web
             });
 
             app.UseRouting();
+            app.UseSession();
+         
+          
             app.UseMiddleware<RequestTimeMiddleware>();
             app.UseMiddleware<ExceptionMiddleware>();
-            app.UseAuthorization();
             app.UseStaticFiles();
+            app.UseAuthentication();//注意添加这一句，启用验证
+            app.UseAuthorization();
+            // 配置授权
+     
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

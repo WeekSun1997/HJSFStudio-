@@ -5,5 +5,6 @@ namespace Interface
 {
     public interface IBaseServer<T> 
     {
+      
     }
 }

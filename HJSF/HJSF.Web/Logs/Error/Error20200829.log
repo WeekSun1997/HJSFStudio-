@@ -1,0 +1,140 @@
+2020-08-29 00:03:47,180 [13] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 22
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 00:09:56,774 [9] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 57
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:13:59,757 [4] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Incorrect Content-Type: 
+   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
+   at Microsoft.AspNetCore.Http.DefaultHttpRequest.get_Form()
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 22
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:14:11,551 [19] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Incorrect Content-Type: 
+   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
+   at Microsoft.AspNetCore.Http.DefaultHttpRequest.get_Form()
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 22
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:15:52,688 [18] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:16:21,834 [5] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:16:39,015 [9] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:39:08,848 [12] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:39:43,830 [4] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:41:53,690 [9] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:45:48,649 [26] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:48:14,477 [11] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:48:30,763 [21] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:49:26,779 [21] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:50:23,778 [28] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 58
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-29 23:55:56,528 [7] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 66
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31

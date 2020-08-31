@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using HJSF.RepositoryServices;
 
 namespace RepositoryServices
 {
@@ -28,56 +29,56 @@ namespace RepositoryServices
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        bool Insert<T>(T t) where T : class;
+        ResultHelp Insert<T>(T t) where T : class;
         /// <summary>
         /// 异步插入
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<int> InsertAsync<T>(T t) where T : class;
+        Task<ResultHelp> InsertAsync<T>(T t) where T : class;
         /// <summary>
         /// 修改数据
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        bool Edit<T>(T t) where T : class;
+        ResultHelp Edit<T>(T t) where T : class;
         /// <summary>
         /// 异步修改
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<bool> EditAsync<T>(T t) where T : class;
+        Task<ResultHelp> EditAsync<T>(T t) where T : class;
         /// <summary>
         /// 删除数据
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        bool Remove<T>(T t) where T : class;
+        ResultHelp Remove<T>(T t) where T : class;
         /// <summary>
         /// 异步删除
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<bool> RemoveAsync<T>(T t) where T : class;
+        Task<ResultHelp> RemoveAsync<T>(T t) where T : class;
 
         /// <summary>
         /// EF查询集合
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        Task<List<T>> Query<T>(Expression<Func<T, bool>> WhereExpression) where T : class;
+        Task<ResultHelp<List<T>>> Query<T>(Expression<Func<T, bool>> WhereExpression) where T : class;
         /// <summary>
         /// 异步根据条件获取第一个,需要判断是否为空
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="WhereExpression"></param>
         /// <returns></returns>
-        Task<T> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class;
+        Task<ResultHelp<T>> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class;
 
         /// <summary>
         /// 同步获取第一个(FirstOrDefault)
@@ -85,6 +86,6 @@ namespace RepositoryServices
         /// <typeparam name="T"></typeparam>
         /// <param name="WhereExpression"></param>
         /// <returns></returns>
-        T FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class;
+        ResultHelp<T> FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class;
     }
 }

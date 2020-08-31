@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HJSF.Enum\HJSF.Enum.csproj" />
     <ProjectReference Include="..\HJSF.ORM\HJSF.ORM.csproj" />
     <ProjectReference Include="..\ISqlSguar\HJSF.ISqlServer.csproj" />
   </ItemGroup>

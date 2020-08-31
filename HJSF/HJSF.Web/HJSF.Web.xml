@@ -24,7 +24,7 @@
             <param name="base"></param>
             <param name="db"></param>
         </member>
-        <member name="M:HJSF.Web.Controllers.BaseApiController`2.AddEntity``1(``0,System.String@)">
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.AddEntity``1(``0)">
             <summary>
             同步添加方法
             </summary>
@@ -121,6 +121,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:HJSF.Web.Controllers.SysUserController.GetSeesion">
+            <summary>
+            获取session
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:HJSF.Web.Model.Login.SysLoginEntity">
             <summary>
             用户登录实体
@@ -184,12 +190,13 @@
             返回数据
             </summary>
         </member>
-        <member name="M:HJSF.Web.Model.ResponseModel`1.#ctor(System.String,HJSF.Enum.ResponseCode,`0)">
+        <member name="M:HJSF.Web.Model.ResponseModel`1.#ctor(HJSF.Enum.ResponseCode,System.String,`0)">
             <summary>
             返回数据实体
             </summary>
             <param name="Msg"></param>
             <param name="code"></param>
+            <param name="Data"></param>
         </member>
         <member name="T:HJSF.Web.Model.TableEntity">
             <summary>

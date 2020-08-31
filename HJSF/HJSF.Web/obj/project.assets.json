@@ -2763,6 +2763,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "HJSF.Enum": "1.0.0",
           "HJSF.ISqlServer": "1.0.0",
           "HJSF.ORM": "1.0.0"
         },
@@ -2806,8 +2807,10 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Library": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.7",
           "Microsoft.AspNetCore.Http.Features": "3.1.7",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7",
+          "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "5.5.1"
         },
         "compile": {

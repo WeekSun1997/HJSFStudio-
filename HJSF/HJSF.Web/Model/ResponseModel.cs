@@ -55,11 +55,12 @@ namespace HJSF.Web.Model
         /// </summary>
         /// <param name="Msg"></param>
         /// <param name="code"></param>
-        public ResponseModel(string Msg, ResponseCode code, T data)
+        /// <param name="Data"></param>
+        public ResponseModel(ResponseCode code, string Msg, T Data)
         {
             this.Code = code;
             this.Msg = Msg;
-            this.Data = data;
+            this.Data = Data;
         }
 
     }

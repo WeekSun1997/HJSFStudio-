@@ -1,4 +1,6 @@
-﻿using HJSF.ORM.Models;
+﻿using HJSF.Enum;
+using HJSF.ORM.Models;
+using HJSF.RepositoryServices;
 using Interface.ISqlSguar;
 using ISqlSguar;
 using Microsoft.EntityFrameworkCore;
@@ -10,23 +12,24 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 
 namespace RepositoryServices
 {
-    public class BaseRepository : DBServices,IBaseRepository
+    public class BaseRepository : DBServices, IBaseRepository
     {
         public HJSFContext _dbContext { get; set; }
 
         public BaseRepository() { }
 
 
-        public BaseRepository(string _ConnectionString) :base(_ConnectionString)
+        public BaseRepository(string _ConnectionString) : base(_ConnectionString)
         {
             ConnectionString = _ConnectionString;
         }
 
-       
+
         /// <summary>
         /// 修改
         /// </summary>
@@ -34,14 +37,21 @@ namespace RepositoryServices
         /// <param name="t"></param>
         /// <param name="msg">返回异常信息</param>
         /// <returns></returns>
-        public virtual bool Edit<T>(T t) where T : class
+        public virtual ResultHelp Edit<T>(T t) where T : class
         {
+            try
+            {
                 using (_dbContext = new HJSFContext())
                 {
                     _dbContext.Set<T>().Update(t);
-                    return _dbContext.SaveChanges() > 0;
-
+                    var result = _dbContext.SaveChanges() > 0;
+                    return new ResultHelp(result ? ResponseCode.Success : ResponseCode.Error, null);
                 }
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp(ResponseCode.Error, ex.Message);
+            }
         }
         /// <summary>
         /// 异步修改
@@ -49,12 +59,20 @@ namespace RepositoryServices
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public virtual async Task<bool> EditAsync<T>(T t) where T : class
+        public virtual async Task<ResultHelp> EditAsync<T>(T t) where T : class
         {
-            using (_dbContext = new HJSFContext())
+            try
             {
-                _dbContext.Set<T>().Update(t);
-                return await _dbContext.SaveChangesAsync() > 0;
+                using (_dbContext = new HJSFContext())
+                {
+                    _dbContext.Set<T>().Update(t);
+                    var result = await _dbContext.SaveChangesAsync() > 0;
+                    return new ResultHelp(result ? ResponseCode.Success : ResponseCode.Error, null);
+                }
+            }
+            catch (AggregateException ex)
+            {
+                return new ResultHelp(ResponseCode.Error, ex.Message);
             }
         }
         /// <summary>
@@ -64,13 +82,22 @@ namespace RepositoryServices
         /// <param name="t"></param>
         /// <param name="msg">异常信息</param>
         /// <returns></returns>
-        public virtual bool Insert<T>(T t) where T : class
+        public virtual ResultHelp Insert<T>(T t) where T : class
         {
-              using (_dbContext = new HJSFContext())
+            try
+            {
+                using (_dbContext = new HJSFContext())
                 {
                     _dbContext.Set<T>().Add(t);
-                    return _dbContext.SaveChanges() > 0;
+                    var result = _dbContext.SaveChanges() > 0;
+                    return new ResultHelp(result ? ResponseCode.Success : ResponseCode.Error, null);
                 }
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp(ResponseCode.Error, ex.Message);
+
+            }
         }
 
         /// <summary>
@@ -79,12 +106,20 @@ namespace RepositoryServices
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public virtual async Task<int> InsertAsync<T>(T t) where T : class
+        public virtual async Task<ResultHelp> InsertAsync<T>(T t) where T : class
         {
-            using (_dbContext = new HJSFContext())
+            try
             {
-                _dbContext.Set<T>().Add(t);
-                return await _dbContext.SaveChangesAsync();
+                using (_dbContext = new HJSFContext())
+                {
+                    _dbContext.Set<T>().Add(t);
+                    var result = await _dbContext.SaveChangesAsync() > 0;
+                    return new ResultHelp(result ? ResponseCode.Success : ResponseCode.Error, null);
+                }
+            }
+            catch (AggregateException ex)
+            {
+                return new ResultHelp(ResponseCode.Error, ex.Message);
             }
         }
         /// <summary>
@@ -99,7 +134,7 @@ namespace RepositoryServices
         ///  操作之前方法
         /// </summary>
         /// <returns></returns>
-        public virtual  string OnBefore()
+        public virtual string OnBefore()
         {
             return "";
         }
@@ -111,13 +146,22 @@ namespace RepositoryServices
         /// <param name="t"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public virtual bool Remove<T>(T t) where T : class
+        public virtual ResultHelp Remove<T>(T t) where T : class
         {
+            try
+            {
                 using (_dbContext = new HJSFContext())
                 {
                     _dbContext.Set<T>().Remove(t);
-                    return _dbContext.SaveChanges() > 0;
+                    var result = _dbContext.SaveChanges() > 0;
+                    return new ResultHelp(result ? ResponseCode.Success : ResponseCode.Error, null);
                 }
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp(ResponseCode.Error, ex.Message);
+            }
+
         }
         /// <summary>
         /// 异步删除
@@ -125,12 +169,20 @@ namespace RepositoryServices
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public async Task<bool> RemoveAsync<T>(T t) where T : class
+        public async Task<ResultHelp> RemoveAsync<T>(T t) where T : class
         {
-            using (_dbContext = new HJSFContext())
+            try
             {
-                _dbContext.Set<T>().Remove(t);
-                return await _dbContext.SaveChangesAsync() > 0;
+                using (_dbContext = new HJSFContext())
+                {
+                    _dbContext.Set<T>().Remove(t);
+                    var result = await _dbContext.SaveChangesAsync() > 0;
+                    return new ResultHelp(result ? ResponseCode.Success : ResponseCode.Error, null);
+                }
+            }
+            catch (AggregateException ex)
+            {
+                return new ResultHelp(ResponseCode.Error, ex.Message);
             }
         }
         /// <summary>
@@ -139,28 +191,54 @@ namespace RepositoryServices
         /// <param name="Sql"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public virtual async Task<List<T>> Query<T>(Expression<Func<T, bool>> expression) where T : class
+        public virtual async Task<ResultHelp<List<T>>> Query<T>(Expression<Func<T, bool>> expression) where T : class
         {
-            using (_dbContext = new HJSFContext())
+            try
             {
-                return await _dbContext.Set<T>().Where(expression).ToListAsync();
+                using (_dbContext = new HJSFContext())
+                {
+                    var result = await _dbContext.Set<T>().Where(expression).ToListAsync();
+                    return new ResultHelp<List<T>>(ResponseCode.Success, "", result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<List<T>>(ResponseCode.Error, ex.Message, null);
             }
         }
 
-        public async Task<T> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T:class
+        public async Task<ResultHelp<T>> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class
         {
-            using (_dbContext = new HJSFContext())
+            try
             {
-                return await _dbContext.Set<T>().Where(WhereExpression).FirstAsync();
+                using (_dbContext = new HJSFContext())
+                {
+                    var query = await _dbContext.Set<T>().Where(WhereExpression).FirstAsync();
+
+                    return new ResultHelp<T>(ResponseCode.Success, "", query);
+                }
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<T>(ResponseCode.Error, ex.Message, null);
             }
         }
 
-        public T FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class
+        public ResultHelp<T> FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class
         {
-            using (_dbContext = new HJSFContext())
+            try
             {
-                return  _dbContext.Set<T>().Where(WhereExpression).FirstOrDefault();
+                using (_dbContext = new HJSFContext())
+                {
+                    var result = _dbContext.Set<T>().Where(WhereExpression).FirstOrDefault();
+                    return new ResultHelp<T>(ResponseCode.Success, null, result);
+                }
             }
+            catch (Exception ex)
+            {
+                return new ResultHelp<T>(ResponseCode.Error, ex.Message, null);
+            }
+
         }
     }
 }

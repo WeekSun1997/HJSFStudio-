@@ -1404,6 +1404,7 @@
       },
       "HJSF.RepositoryServices/1.0.0": {
         "dependencies": {
+          "HJSF.Enum": "1.0.0",
           "HJSF.ISqlServer": "1.0.0",
           "HJSF.ORM": "1.0.0"
         },

@@ -1,0 +1,144 @@
+2020-08-27 00:00:41,867 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 00:00:41,881 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 00:00:41,882 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 00:00:41,882 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 00:00:41,883 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 00:22:52,461 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 00:22:52,476 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 00:22:52,479 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 00:22:52,481 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 00:22:52,484 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 00:24:43,819 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 00:24:43,834 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 00:24:43,837 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 00:24:43,840 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 00:24:43,842 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 00:27:50,233 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 00:27:50,248 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 00:27:50,251 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 00:27:50,254 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 00:27:50,257 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 00:29:01,717 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 00:29:01,735 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 00:29:01,738 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 00:29:01,741 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 00:29:01,743 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 22:16:54,660 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 22:16:54,706 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 22:16:54,709 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 22:16:54,710 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 22:16:54,712 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 22:19:03,234 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 22:19:03,250 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 22:19:03,253 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 22:19:03,255 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 22:19:03,257 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 22:38:25,647 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 22:38:25,661 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 22:38:25,664 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 22:38:25,666 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 22:38:25,669 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 22:42:44,897 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 22:42:44,913 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 22:42:44,915 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 22:42:44,918 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 22:42:44,920 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 22:46:04,870 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 22:46:04,884 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 22:46:04,887 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 22:46:04,889 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 22:46:04,891 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 22:49:29,911 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 22:49:29,932 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 22:49:29,934 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 22:49:29,936 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 22:49:29,941 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 22:55:08,649 [2] INFO  Microsoft.Hosting.Lifetime - Application is shutting down... 
+ 
+2020-08-27 22:56:39,712 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 22:56:39,726 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 22:56:39,729 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 22:56:39,731 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 22:56:39,734 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 23:01:18,454 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 23:01:18,469 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 23:01:18,472 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 23:01:18,474 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 23:01:18,476 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 23:03:42,151 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: https://localhost:5001 
+ 
+2020-08-27 23:03:42,167 [1] INFO  Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5000 
+ 
+2020-08-27 23:03:42,170 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down. 
+ 
+2020-08-27 23:03:42,172 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Development 
+ 
+2020-08-27 23:03:42,175 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: G:\HJSFStudio--master\HJSF\HJSF.Web 
+ 
+2020-08-27 23:04:44,554 [2] INFO  Microsoft.Hosting.Lifetime - Application is shutting down... 
+ 

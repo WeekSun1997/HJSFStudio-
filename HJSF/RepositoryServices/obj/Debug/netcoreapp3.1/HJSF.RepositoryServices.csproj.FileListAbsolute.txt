@@ -14,3 +14,5 @@ G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.Repos
 G:\HJSFStudio--master\HJSF\RepositoryServices\obj\Debug\netcoreapp3.1\HJSF.RepositoryServices.pdb
 G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\System.Data.SqlClient.xml
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.Enum.dll
+G:\HJSFStudio--master\HJSF\RepositoryServices\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb

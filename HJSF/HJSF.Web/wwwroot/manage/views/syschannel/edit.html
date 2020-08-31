@@ -1,0 +1,140 @@
+<!-- ================================
+ * 功能描述：系统栏目
+ * ================================ -->
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">模块名称：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="text" name="channelName" value="{{ d.params.channelName || '' }}" placeholder="请输入模块名称" lay-verType="tips" lay-verify="required" lay-reqText="模块名称不能为空" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">事件名称：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="text" name="eventName" value="{{ d.params.eventName || '' }}" placeholder="请输入事件名称" lay-verType="tips" lay-verify="required" lay-reqText="事件名称不能为空" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+</div>
+
+
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">上级模块：</label>
+        <div class="layui-input-block">
+            <select name="parentId" id="parentId-syschannel" lay-filter="filter-parentId-syschannel">
+            </select>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">模块类型：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="radio" name="channelType" lay-filter="channelType-syschannel" value="0" title="菜单" {{ d.params.channelType === 0 ? 'checked' : '' }}>
+                <input type="radio" name="channelType" lay-filter="channelType-syschannel" value="1" title="按钮" {{ d.params.channelType === 1 ? 'checked' : '' }}>
+            </script>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">模块链接：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="text" name="channelLink" value="{{ d.params.channelLink || '' }}" placeholder="请输入模块链接" lay-verType="tips" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">视图链接：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="text" name="viewLink" value="{{ d.params.viewLink || '' }}" placeholder="请输入视图链接" lay-verType="tips" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">排列顺序：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="text" name="sort" value="{{ d.params.sort || '99' }}" placeholder="请输入排列顺序" lay-verType="tips" lay-verify="required|number" lay-reqText="排列顺序不能为空" autocomplete="off" class="layui-input layui-input-number">
+            </script>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">模块样式：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="text" name="className" value="{{ d.params.className || '' }}" placeholder="请输入模块样式" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">模块图标：</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                <input type="text" name="iconName" value="{{ d.params.iconName || '' }}" id="iconName-syschannel" placeholder="请输入图标名称" autocomplete="off" class="layui-input" style="display:none">
+            </script>
+        </div>
+    </div>
+
+</div>
+<div class="layui-col-sm6">
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态：</label>
+        <div class="layui-input-inline" style="width: 80px">
+            <script type="text/html" template>
+                <input type="checkbox" name="status" value="1" {{ d.params.status === 1 ? 'checked' : '' }} lay-skin="switch" lay-text="启用|禁用">
+            </script>
+        </div>
+        <div class="layui-input-inline" style="width: 80px">
+            <script type="text/html" template>
+                <input type="checkbox" name="isShow" value="true" {{ d.params.isShow ==true ? 'checked' : '' }} lay-skin="switch" lay-text="显示|不显示">
+            </script>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" template>
+    {{# if((d.params.id||0)===0){ }}
+    <div class="layui-col-xs12">
+        <div class="layui-form-item" id="channel-buttons-syschannel">
+            <label class="layui-form-label">模块按钮：</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="Buttons" value="add" title="新建">
+                <input type="checkbox" name="Buttons" value="edit" title="编辑">
+                <input type="checkbox" name="Buttons" value="enable" title="启用">
+                <input type="checkbox" name="Buttons" value="disable" title="禁用">
+                <input type="checkbox" name="Buttons" value="remove" title="删除">
+            </div>
+        </div>
+    </div>
+    {{# } }}
+</script>
+
+
+<script type="text/html" template>
+    <input type="hidden" name="id" value="{{ d.params.id || '0' }}" />
+</script>

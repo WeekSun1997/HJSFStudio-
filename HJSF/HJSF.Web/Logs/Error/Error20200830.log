@@ -1,0 +1,18 @@
+2020-08-30 00:04:55,821 [10] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 60
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31
+2020-08-30 00:05:02,539 [9] ERROR Middleware.ExceptionMiddleware - 系统异常 
+ 
+System.InvalidOperationException: Endpoint HJSF.Web.Controllers.SysUserController.GetSeesion (HJSF.Web) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Middleware.JwtMiddleware.JwtMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\JwtMiddleware\JwtMiddleware.cs:line 60
+   at Middleware.ExceptionMiddleware.Invoke(HttpContext context) in G:\HJSFStudio--master\HJSF\Middleware\ExceptionMiddleware.cs:line 31

@@ -2152,6 +2152,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "HJSF.Enum": "1.0.0",
           "HJSF.ISqlServer": "1.0.0",
           "HJSF.ORM": "1.0.0"
         },

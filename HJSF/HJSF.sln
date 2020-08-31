@@ -41,13 +41,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware", "Middleware\Middleware.csproj", "{1409AC6D-789B-4CCD-8426-BE415908D58F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{BEDA7934-B4DC-4796-B25A-0CC20E3E92C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interface", "Interface\Interface.csproj", "{BEDA7934-B4DC-4796-B25A-0CC20E3E92C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{AF503A36-10F3-4B30-95A3-D300DED950C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{AF503A36-10F3-4B30-95A3-D300DED950C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aop", "Aop", "{8588731D-459B-4559-8C9D-FD01B41EF2A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HJSF.AOP", "HJSF.AOP\HJSF.AOP.csproj", "{244FBA27-631E-45EB-ABBF-FC121377B809}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HJSF.AOP", "HJSF.AOP\HJSF.AOP.csproj", "{244FBA27-631E-45EB-ABBF-FC121377B809}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

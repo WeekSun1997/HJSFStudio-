@@ -1,0 +1,51 @@
+<!-- ================================
+ * 功能描述：系统栏目列表视图
+ * 公司名称：上海友赢信息科技有限公司
+ * ================================ -->
+
+<title>模块管理</title>
+
+<div class="layui-card card-toolbar" style="border-bottom:1px solid #f6f6f6;">
+    <div class="layui-card-body edit-button-box">
+        <div class="layui-btn-container" id="YY-toolbar-syschannel"></div>
+    </div>
+</div>
+
+<div class="layui-fluid layui-fluid-mb0 layui-col-space10" id="YY-fulid-syschannel" style="height: calc(100% - 70px); min-height:500px;">
+
+    <div class="layui-col-lg2 layui-col-md3 layui-col-sm3" style="height:100% ;">
+        <div class="layui-card" style="height:100%;">
+            <div class="layui-card-header">所有栏目</div>
+            <div id="channelTree-syschannel" class="layui-card-body" style="height:calc(100% - 50px); padding:0;overflow: auto;">
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-lg10 layui-col-md9 layui-col-sm9" style="height: 100%;">
+        <div class="layui-card" style="height:100%;">
+            <div class="layui-card-header card-header-search">
+                <form class="layui-form search-form">
+                    <div class="layui-row">
+                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
+                            <div class="layui-inline search-keyword-text">关键字：</div>
+                            <div class="layui-inline search-keyword-input">
+                                <input type="text" value="" name="keyword" placeholder="模块名称" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3 search-button-box">
+                            <button type="submit" lay-submit class="layui-btn" lay-filter="YY-btn-search-syschannel" id="YY-btn-search-syschannel">搜索</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-card-body card-table">
+                 <table id="YY-table-syschannel" lay-filter="YY-table-syschannel" data-href="syschannel/index"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('syschannel', layui.factory('syschannel'));
+</script>
