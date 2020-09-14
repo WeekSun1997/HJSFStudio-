@@ -11,6 +11,4 @@ G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.csproj.Copy
 G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.dll
 G:\HJSFStudio--master\HJSF\RedisServer\obj\Debug\netcoreapp3.1\Cache.pdb
 G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
-G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
-G:\HJSFStudio--master\HJSF\RedisServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.xml

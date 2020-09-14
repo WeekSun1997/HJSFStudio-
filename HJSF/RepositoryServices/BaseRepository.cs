@@ -240,5 +240,14 @@ namespace RepositoryServices
             }
 
         }
+        /// <summary>
+        /// 获取EF上下文
+        /// </summary>
+        /// <returns></returns>
+        public HJSFContext GetDbContext()
+        { 
+            var dbcontext = new HJSFContext();
+            return dbcontext;
+        }
     }
 }

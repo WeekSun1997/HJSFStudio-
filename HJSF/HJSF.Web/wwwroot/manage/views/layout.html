@@ -30,7 +30,7 @@
         </li>
 
         <li class="layui-nav-item" lay-unselect>
-            <a lay-href="app/message/" layadmin-event="message">
+            <a lay-href="notices/index" layadmin-event="message">
                 <i class="layui-icon layui-icon-notice"></i>
 
                 <!-- 如果有新消息，则显示小圆点 -->
@@ -42,6 +42,7 @@
 
             </a>
         </li>
+
         <li class="layui-nav-item layui-hide-xs" lay-unselect>
             <a href="javascript:;" layadmin-event="theme">
                 <i class="layui-icon layui-icon-theme"></i>
@@ -57,20 +58,20 @@
         <i class="layui-icon layui-icon-screen-full"></i>
       </a>
     </li>-->
-        <li class="layui-nav-item" lay-unselect>
+        <!--<li class="layui-nav-item" lay-unselect>
             <script type="text/html" template lay-url="/v1/sysuser/session"
                     lay-done="layui.element.render('nav', 'layadmin-layout-right');">
                 <a href="javascript:;">
                     <cite>{{ d.data.userName }}</cite>
                 </a>
                 <dl class="layui-nav-child">
-                    <!--<dd><a lay-href="sysuser/info">基本资料</a></dd>-->
+                    <dd><a lay-href="sysuser/info">基本资料</a></dd>
                     <dd><a lay-href="sysuser/password">修改密码</a></dd>
                     <hr>
                     <dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>
                 </dl>
             </script>
-        </li>
+        </li>-->
 
         <li class="layui-nav-item layui-hide-xs" lay-unselect>
             <a href="javascript:;"><i class="layui-icon layui-icon-more-vertical"></i></a>
@@ -96,9 +97,10 @@
           var path =  layui.router().path
           ,pathURL = layui.admin.correctRouter(path.join('/'))
           ,dataName = layui.setter.response.dataName;
-          
+            console.info(d[dataName]);
           layui.each(d[dataName], function(index, item){ 
-            var hasChildren = typeof item.list === 'object' && item.list.length > 0
+            console.info(item);
+            var hasChildren = typeof item.list === 'object' || item.list.length > 0
             ,classSelected = function(){
               var match = path[0] == item.name || (index == 0 && !path[0]) 
               || (item.jump && pathURL == layui.admin.correctRouter(item.jump)) || item.spread;

@@ -12,6 +12,8 @@ namespace Interface.ISqlSguar
     {
         public string ConnectionString { get; set; }
         public DBServices() { }
+        
+        
         public DBServices(string _ConnectionString)
         {
             ConnectionString = _ConnectionString;

@@ -7,6 +7,8 @@ using System.Text;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using HJSF.RepositoryServices;
+using Microsoft.EntityFrameworkCore;
+using HJSF.ORM.Models;
 
 namespace RepositoryServices
 {
@@ -87,5 +89,7 @@ namespace RepositoryServices
         /// <param name="WhereExpression"></param>
         /// <returns></returns>
         ResultHelp<T> FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class;
+
+        HJSFContext GetDbContext();
     }
 }

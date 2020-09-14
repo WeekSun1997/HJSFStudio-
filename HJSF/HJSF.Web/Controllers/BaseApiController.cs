@@ -8,8 +8,10 @@ using Cache;
 using HFJS.Entity.ResponseModel;
 using HJSF.ORM.Models;
 using HJSF.RepositoryServices;
+using HJSF.Web.Model.Login;
 using Interface;
 using ISqlSguar;
+using Library;
 using log4net.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -26,7 +28,7 @@ namespace HJSF.Web.Controllers
     /// <typeparam name="TService"></typeparam>
     [Route("api/[controller]")]
     [ApiController]
-   
+
     public class BaseApiController<T, TService> : ControllerBase
         where T : class, new()
         where TService : IBaseServer<T>
@@ -42,7 +44,7 @@ namespace HJSF.Web.Controllers
 
         private ICache _cache;
 
-   
+
         /// <summary>
         ///  初始化
         /// </summary>
@@ -66,7 +68,7 @@ namespace HJSF.Web.Controllers
         /// <returns></returns>
         public ResultHelp AddEntity<TEntity>(TEntity t) where TEntity : class
         {
-                return _baseRepository.Insert<TEntity>(t);
+            return _baseRepository.Insert<TEntity>(t);
         }
         /// <summary>
         /// 异步添加
@@ -76,7 +78,7 @@ namespace HJSF.Web.Controllers
         /// <returns></returns>
         public async Task<ResultHelp> AddEntityAsync<TEntity>(TEntity T) where TEntity : class
         {
-            return await _baseRepository.InsertAsync<TEntity>(T) ;
+            return await _baseRepository.InsertAsync<TEntity>(T);
         }
         /// <summary>
         /// 条件获取第一条数据
@@ -86,8 +88,43 @@ namespace HJSF.Web.Controllers
         public async Task<ResultHelp<T>> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class
         {
 
-            return await _baseRepository.FisrtEntityAsync<T>(WhereExpression);
+            return await  _baseRepository.FisrtEntityAsync<T>(WhereExpression);
         }
-      
+
+        public  ResultHelp<T> FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class
+        {
+            return  _baseRepository.FisrtEntity<T>(WhereExpression);
+        }
+
+        /// <summary>
+        /// 获取当前操作用户信息，null表示未登录
+        /// </summary>
+        public AccountUser GetAccount()
+        {
+            if (HttpContext == null) return default;
+
+            try
+            {
+                if (HttpContext.Items["AccountItem"] is AccountUser account)
+                    return account;
+
+                var user = HttpContext.User;
+                if (user == null) return default;
+                if (!user.Identity.IsAuthenticated) return default;
+                var UserId = Convert.ToInt32(user.FindFirst("UserId").Value.ToString());
+                var UserName = user.FindFirst("UserName").Value.ToString();
+                var OrgId = Convert.ToInt32(user.FindFirst("OrgId").Value.ToString());
+                var accounts = new AccountUser { OrgId = OrgId, UserName = UserName, UserId = UserId };
+                HttpContext.Items["AccountItem"] = accounts;
+                return accounts;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return default;
+        }
+
+
     }
 }

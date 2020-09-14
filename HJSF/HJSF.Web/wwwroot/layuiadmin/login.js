@@ -6,7 +6,7 @@
         , router = layui.router()
         , search = router.search;
     $('.logincaptcha').click(function () {
-      
+        
         $(".logincaptcha").attr('src', '/v1/sysuser/GetVerify?id=' + new Date().getTime());
         $('input[name="verify"]').val('');
     });
@@ -16,7 +16,7 @@
 
         $(data.elem).prop("disabled", true);
         $(data.elem).addClass('layui-disabled');
-
+        
         $.ajax({
             url: '/v1/SysUser/login'
             , type: 'post'

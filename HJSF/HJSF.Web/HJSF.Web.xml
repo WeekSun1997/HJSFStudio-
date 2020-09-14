@@ -48,6 +48,11 @@
             <param name="WhereExpression"></param>
             <returns></returns>
         </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.GetAccount">
+            <summary>
+            获取当前操作用户信息，null表示未登录
+            </summary>
+        </member>
         <member name="T:HJSF.Web.Controllers.DataBaseManagerController">
             <summary>
             数据库操作控制器
@@ -73,6 +78,53 @@
             <summary>
             加载所有数据表
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HJSF.Web.Controllers.SysChannelController">
+            <summary>
+            栏目控制器
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.SysChannelController._server">
+            <summary>
+             业务接口
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.SysChannelController._db">
+            <summary>
+            数据库接口
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.SysChannelController._baseRepository">
+            <summary>
+            EF接口
+            </summary>
+        </member>
+        <member name="F:HJSF.Web.Controllers.SysChannelController._cache">
+            <summary>
+            缓存接口
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.#ctor(Interface.ISysChannelServer,RepositoryServices.IBaseRepository,ISqlSguar.IDBServices,Cache.ICache)">
+            <summary>
+            
+            </summary>
+            <param name="server"></param>
+            <param name="base"></param>
+            <param name="dB"></param>
+            <param name="cache"></param>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.PageChannelList">
+            <summary>
+            左侧菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.GetButtons(HJSF.Web.Model.SysChannel.ButtonSearch)">
+            <summary>
+            获取指定连接按钮列表
+            </summary>
+            <param name="search"></param>
             <returns></returns>
         </member>
         <member name="T:HJSF.Web.Controllers.SysUserController">
@@ -126,6 +178,26 @@
             获取session
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:HJSF.Web.Model.Login.AccountUser">
+            <summary>
+            部门信息储存实体
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.Login.AccountUser.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.Login.AccountUser.UserName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.Login.AccountUser.OrgId">
+            <summary>
+            用户部门Id
+            </summary>
         </member>
         <member name="T:HJSF.Web.Model.Login.SysLoginEntity">
             <summary>
@@ -197,6 +269,56 @@
             <param name="Msg"></param>
             <param name="code"></param>
             <param name="Data"></param>
+        </member>
+        <member name="T:HJSF.Web.Model.SysChannel.ButtonListEntity">
+            <summary>
+            获取操作按钮搜索实体
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.EventName">
+            <summary>
+            当前按钮连接
+            </summary>
+        </member>
+        <member name="T:HJSF.Web.Model.SysChannel.ButtonSearch">
+            <summary>
+            获取操作按钮搜索实体
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonSearch.EventName">
+            <summary>
+            当前操作链接
+            </summary>
+        </member>
+        <member name="T:HJSF.Web.Model.SysChannel.PageChannelListEntity">
+            <summary>
+            左侧菜单
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.PageChannelListEntity.Name">
+            <summary>
+            导航名称，未指定jump属性值该名称将作为链接Url
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.PageChannelListEntity.Title">
+            <summary>
+            导航名称
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.PageChannelListEntity.Icon">
+            <summary>
+            导航图标，可以使用Font Awesome图标
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.PageChannelListEntity.Jump">
+            <summary>
+            链接Url，指定了该属性值则优先使用该值。否则将使用name属性值拼接Url
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.PageChannelListEntity.List">
+            <summary>
+            下级导航
+            </summary>
         </member>
         <member name="T:HJSF.Web.Model.TableEntity">
             <summary>

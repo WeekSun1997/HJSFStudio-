@@ -6,10 +6,8 @@ G:\HJSFStudio--master\HJSF\Middleware\obj\Debug\netcoreapp3.1\Middleware.csprojA
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Middleware.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Library.dll
-G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Library.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
-G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\System.Data.SqlClient.xml
 G:\HJSFStudio--master\HJSF\Middleware\obj\Debug\netcoreapp3.1\Middleware.csproj.CopyComplete
 G:\HJSFStudio--master\HJSF\Middleware\obj\Debug\netcoreapp3.1\Middleware.dll
 G:\HJSFStudio--master\HJSF\Middleware\obj\Debug\netcoreapp3.1\Middleware.pdb

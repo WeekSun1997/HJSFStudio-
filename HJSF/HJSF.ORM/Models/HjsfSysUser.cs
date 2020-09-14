@@ -5,19 +5,18 @@ namespace HJSF.ORM.Models
 {
     public partial class HjsfSysUser
     {
-        public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string LoginCode { get; set; }
-        public string Phone { get; set; }
-        public string Eamil { get; set; }
-        public string Address { get; set; }
-        public string OpenId { get; set; }
-        public int? CreateUserId { get; set; }
+        public long Id { get; set; }
+        public int Status { get; set; }
+        public DateTime CreateDate { get; set; }
+        public long CreateUserId { get; set; }
         public string CreateUserName { get; set; }
-        public DateTime? CreateDateTime { get; set; }
-        public int? UpdateUserId { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public long? UpdateUserId { get; set; }
         public string UpdateUserName { get; set; }
-        public DateTime? UpdateDateTime { get; set; }
+        public string LoginId { get; set; }
+        public string PassWord { get; set; }
+        public int LoginCount { get; set; }
+        public DateTime? LoginDate { get; set; }
+        public string LoginIp { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace HJSF.Web.Controllers
     [ApiController]
 
     [Route("v1/[controller]")]
-    public class SysUserController : BaseApiController<HjsfSysUser, ISysUserServer>
+    public class SysUserController : BaseApiController<HjsfSysUserInfo, ISysUserServer>
     {
         /// <summary>
         ///  业务接口
@@ -83,8 +83,10 @@ namespace HJSF.Web.Controllers
         public async Task<ResponseModel<string>> Login([FromForm] SysLoginEntity entity)
         {
             string tokenString = string.Empty;
-            var user = await _baseRepository.FisrtEntityAsync<HjsfSysUser>(a => a.Id == 1);
-            if (user.Data != null)
+        
+            var userList = await _baseRepository.Query<HjsfSysUserInfo>(a => a.Id == 3);
+            var user = userList.Data.FirstOrDefault();
+            if (user != null)
             {
                 var claims = new[]
                {
@@ -94,8 +96,9 @@ namespace HJSF.Web.Controllers
                     new Claim(JwtRegisteredClaimNames.Exp, $"{new DateTimeOffset(DateTime.Now.AddMinutes(Utility.Constant.AppSetting.Jwt.ExpiresTime)).ToUnixTimeSeconds()}"),
                     new Claim(JwtRegisteredClaimNames.Iss, Utility.Constant.AppSetting.Jwt.JwtIssuer),
                     new Claim(JwtRegisteredClaimNames.Aud, Utility.Constant.AppSetting.Jwt.JwtAudience),
-                    new Claim("User",Other.JsonToString(user.Data)),
-
+                    new Claim("UserId",user.Id.ToString()),
+                    new Claim("UserName",user.UserName),
+                    new Claim("OrgId",user.OrgId.ToString()),
                 };
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Utility.Constant.AppSetting.Jwt.JwtSecurityKey));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -113,10 +116,10 @@ namespace HJSF.Web.Controllers
                     );
                 tokenString = new JwtSecurityTokenHandler().WriteToken(token);
                 tokenString = $"Bearer {tokenString}";
-                HttpContext.Session.Set("User", Other.SerializeToByte(user.Data));
+                HttpContext.Session.Set("User", Other.SerializeToByte(user));
 
             }
-            return new ResponseModel<string>(user.Code, user.msg, tokenString);
+            return new ResponseModel<string>(userList.Code, userList.msg, tokenString);
         }
 
         /// <summary>
@@ -128,9 +131,12 @@ namespace HJSF.Web.Controllers
 
         public ResponseModel<HjsfSysUser> GetSeesion()
         {
+            var df = base.GetAccount();
             var userbytes = HttpContext.Session.Get("User");
             var user = Other.SerializeToObject<HjsfSysUser>(userbytes);
             return new ResponseModel<HjsfSysUser>(Enum.ResponseCode.Success, "", user);
         }
+
+        
     }
 }

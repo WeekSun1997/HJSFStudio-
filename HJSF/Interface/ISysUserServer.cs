@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Interface
 {
-    public interface ISysUserServer:IBaseServer<HjsfSysUser>
+    public interface ISysUserServer:IBaseServer<HjsfSysUserInfo>
     {
 
     }
