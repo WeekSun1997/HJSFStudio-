@@ -1,9 +1,10 @@
-﻿using RepositoryServices;
+﻿using HJSF.RepositoryServices;
+using RepositoryServices;
 using System;
 
 namespace Interface
 {
-    public interface IBaseServer<T> 
+    public interface IBaseServer<T>: IBaseRepository<T> where T: IRepositoryEntity
     {
       
     }

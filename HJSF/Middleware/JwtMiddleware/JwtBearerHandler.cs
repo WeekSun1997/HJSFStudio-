@@ -43,43 +43,57 @@ namespace Middleware
         protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, JwtBearerRequirement requirement)
         {
             //是否经过验证
-            var isAuthenticated = context.User.Identity.IsAuthenticated;
-            if (!isAuthenticated)
+            if (context.Resource is Endpoint endpoint)
             {
-                context.Fail();
+                var actionDescriptor = endpoint.Metadata.GetMetadata<ControllerActionDescriptor>();
+                //是否过滤权限验证
+                bool isIgnoreRole = actionDescriptor.EndpointMetadata.Where(o => o.GetType() == typeof(IgnoreRoleAttribute)).Any();
+                if (isIgnoreRole)
+                {
+                    context.Succeed(requirement);
+                    
+                }
             }
             else
             {
-                if (context.Resource is Endpoint endpoint)
+                var isAuthenticated = context.User.Identity.IsAuthenticated;
+                if (!isAuthenticated)
                 {
-                    var actionDescriptor = endpoint.Metadata.GetMetadata<ControllerActionDescriptor>();
-                    //是否过滤权限验证
-                    bool isIgnoreRole = actionDescriptor.EndpointMetadata.Where(o => o.GetType() == typeof(IgnoreRoleAttribute)).Any();
-                    if (isIgnoreRole)
+                    context.Fail();
+                }
+                else
+                {
+                    if (context.Resource is Endpoint endpoint1)
                     {
-                        context.Succeed(requirement);
-                    }
-                    else
-                    {
-                        string url = $"{actionDescriptor.ControllerName}/{actionDescriptor.ActionName}";
-                        var result = await _accountService.CheckAuth(url?.ToLower());
-                        result = false;
-                        if (result)
+                        var actionDescriptor = endpoint1.Metadata.GetMetadata<ControllerActionDescriptor>();
+                        //是否过滤权限验证
+                        var isIgnoreRole = actionDescriptor.EndpointMetadata.Where(o => o.GetType() == typeof(IgnoreRoleAttribute)).Any();
+                        if (isIgnoreRole)
                         {
                             context.Succeed(requirement);
                         }
                         else
                         {
-                            context.Fail();
+                            string url = $"{actionDescriptor.ControllerName}/{actionDescriptor.ActionName}";
+                            var result = await _accountService.CheckAuth(url?.ToLower());
+                            result = false;
+                            if (result)
+                            {
+                                context.Succeed(requirement);
+                            }
+                            else
+                            {
+                                context.Fail();
+                            }
                         }
                     }
-                }
-                else
-                {
-                    context.Fail();
+                    else
+                    {
+                        context.Fail();
+                    }
                 }
             }
-
+          
         }
     }
 }

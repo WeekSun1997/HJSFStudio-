@@ -27,9 +27,9 @@ namespace HJSF.Web.Controllers
     /// <summary>
     /// 用户操作控制器
     /// </summary>
-    [ApiController]
 
-    [Route("v1/[controller]")]
+
+
     public class SysUserController : BaseApiController<HjsfSysUserInfo, ISysUserServer>
     {
         /// <summary>
@@ -37,13 +37,7 @@ namespace HJSF.Web.Controllers
         /// </summary>
         public ISysUserServer _server;
         /// <summary>
-        /// 数据库接口
-        /// </summary>
-        public IDBServices _db;
-        /// <summary>
-        /// EF接口
-        /// </summary>
-        public IBaseRepository _baseRepository;
+
         /// <summary>
         /// 缓存接口
         /// </summary>
@@ -55,19 +49,18 @@ namespace HJSF.Web.Controllers
         /// <param name="base"></param>
         /// <param name="dB"></param>
         /// <param name="cache"></param>
-        public SysUserController(ISysUserServer @server, IBaseRepository @base, IDBServices @dB, ICache @cache)
-            : base(server, @base, @dB, @cache)
+        public SysUserController(ISysUserServer @server, ICache @cache)
+            : base(server, @cache)
         {
             _server = @server;
-            _db = @dB;
-            _baseRepository = @base;
+
             _cache = @cache;
         }
         /// <summary>
         /// 获取图片验证码
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GetVerify")]
+        [HttpGet("GetVerify"), IgnoreRole]
         public ActionResult GetVerify(string id)
 
         {
@@ -79,12 +72,13 @@ namespace HJSF.Web.Controllers
         /// 登录方法-设置token
         /// </summary>
         /// <returns></returns>
-        [HttpPost("Login")]
+        [HttpPost("Login"), IgnoreRole]
         public async Task<ResponseModel<string>> Login([FromForm] SysLoginEntity entity)
         {
             string tokenString = string.Empty;
-        
-            var userList = await _baseRepository.Query<HjsfSysUserInfo>(a => a.Id == 3);
+
+            //var userList = await _baseRepository.BaseQueryAsync<HjsfSysUserInfo>(a => a.Id == 3);
+            var userList = await base.QueryListAsync<HjsfSysUserInfo>(a => a.Id == 3);
             var user = userList.Data.FirstOrDefault();
             if (user != null)
             {
@@ -116,10 +110,12 @@ namespace HJSF.Web.Controllers
                     );
                 tokenString = new JwtSecurityTokenHandler().WriteToken(token);
                 tokenString = $"Bearer {tokenString}";
+
                 HttpContext.Session.Set("User", Other.SerializeToByte(user));
 
             }
-            return new ResponseModel<string>(userList.Code, userList.msg, tokenString);
+            return new ResponseModel<string>(Enum.ResponseCode.Success, "", tokenString);
+
         }
 
         /// <summary>
@@ -127,16 +123,14 @@ namespace HJSF.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("Session"), IgnoreRole]
-        [Authorize]
-
-        public ResponseModel<HjsfSysUser> GetSeesion()
+        public ResponseModel<HjsfSysUserInfo> GetSeesion()
         {
             var df = base.GetAccount();
             var userbytes = HttpContext.Session.Get("User");
-            var user = Other.SerializeToObject<HjsfSysUser>(userbytes);
-            return new ResponseModel<HjsfSysUser>(Enum.ResponseCode.Success, "", user);
+            var user = Other.SerializeToObject<HjsfSysUserInfo>(userbytes);
+            return new ResponseModel<HjsfSysUserInfo>(Enum.ResponseCode.Success, "", user);
         }
 
-        
+
     }
 }

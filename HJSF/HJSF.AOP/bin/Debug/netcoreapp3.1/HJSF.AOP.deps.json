@@ -9,7 +9,8 @@
       "HJSF.AOP/1.0.0": {
         "dependencies": {
           "Cache": "1.0.0",
-          "Castle.Core": "4.4.1"
+          "Castle.Core": "4.4.1",
+          "Utility": "1.0.0"
         },
         "runtime": {
           "HJSF.AOP.dll": {}
@@ -40,6 +41,25 @@
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "4.700.20.21406"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/3.1.7": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "3.1.7.0",
+            "fileVersion": "3.100.720.37108"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.7": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "3.1.7.0",
+            "fileVersion": "3.100.720.37108"
           }
         }
       },
@@ -1093,6 +1113,11 @@
           "Cache.dll": {}
         }
       },
+      "HJSF.Enum/1.0.0": {
+        "runtime": {
+          "HJSF.Enum.dll": {}
+        }
+      },
       "HJSF.ISqlServer/1.0.0": {
         "dependencies": {
           "System.Data.SqlClient": "4.6.1"
@@ -1108,6 +1133,17 @@
         },
         "runtime": {
           "Library.dll": {}
+        }
+      },
+      "Utility/1.0.0": {
+        "dependencies": {
+          "Cache": "1.0.0",
+          "HJSF.Enum": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "3.1.7",
+          "System.Drawing.Common": "4.7.0"
+        },
+        "runtime": {
+          "Utility.dll": {}
         }
       }
     }
@@ -1131,6 +1167,20 @@
       "sha512": "sha512-yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "path": "microsoft.bcl.asyncinterfaces/1.1.1",
       "hashPath": "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/3.1.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yp38AFc5tJQZkjINjXBcxq+dANU06lo27D84duitZthtRPsgKJL87uf9RWRsDdRsWd+kXflmdMWFLKFjyKx6Pw==",
+      "path": "microsoft.extensions.dependencyinjection/3.1.7",
+      "hashPath": "microsoft.extensions.dependencyinjection.3.1.7.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oKL2yNtTN1/cOp+cbdyv5TeLzO+GkO9B3fvbcPzKWTNCkDoH3ccYS3FWC1p4KSYe9frW4WsyfSTeM8X+xftOig==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.7",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/3.1.5": {
       "type": "package",
@@ -1872,12 +1922,22 @@
       "serviceable": false,
       "sha512": ""
     },
+    "HJSF.Enum/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "HJSF.ISqlServer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

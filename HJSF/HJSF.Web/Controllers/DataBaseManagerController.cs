@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HFJS.Entity.ResponseModel;
 using HJSF.ORM.Models;
+using HJSF.RepositoryServices.Models;
 using HJSF.Web.Model;
 using Interface;
 using ISqlSguar;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryServices;
 using Services;
+using Utility.WebModel;
 
 namespace HJSF.Web.Controllers
 {
@@ -25,35 +27,31 @@ namespace HJSF.Web.Controllers
         /// 接口对象
         /// </summary>
         public IDataBaseServer _server;
-        /// <summary>
-        /// 数据库对象
-        /// </summary>
-        public IBaseRepository _repository;
-
+    
       
         /// <summary>
         /// 构造方法
         /// </summary>
         /// <param name="service"></param>
-        public DataBaseManagerController(IDataBaseServer service, IBaseRepository repository)
+        public DataBaseManagerController(IDataBaseServer service)
         {
             _server = service;
-            _repository = repository;
+             
         
         }
-        /// <summary>
-        /// 加载所有数据表
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("LoadTable")]
-        public Task<ResponseModel<List<TableEntity>>> LoadDataTable()
-        {
-            string msg = "";
-            var ds = _repository.QueryTableSql("select * from Hjsf_SysUser", ref msg);
+        ///// <summary>
+        ///// 加载所有数据表
+        ///// </summary>
+        ///// <returns></returns>
+        //[HttpGet("LoadTable")]
+        //public Task<ResponseModel<List<ORM.Models.TableEntity>>> LoadDataTable()
+        //{
+        //    string msg = "";
+        //  //  var ds = _repository.QueryTableSql("select * from Hjsf_SysUser", ref msg);
           
           
-            return null;
-        }
+        //    return null;
+        //}
 
     }
 }

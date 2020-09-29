@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace HJSF.ORM.Models
 {
+
+    [SugarTable("HjsfSysRole")]
     public partial class HjsfSysRole
     {
         public long Id { get; set; }

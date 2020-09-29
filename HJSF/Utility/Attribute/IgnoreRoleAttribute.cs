@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Utility.AttributeEntity
 {
     /// <summary>
-    /// 数据插入时忽略该字段
+    /// 排除权限验证过滤器
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class IgnoreRoleAttribute : Attribute

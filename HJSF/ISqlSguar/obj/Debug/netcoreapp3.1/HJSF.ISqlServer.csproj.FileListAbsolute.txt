@@ -6,4 +6,3 @@ G:\HJSFStudio--master\HJSF\ISqlSguar\obj\Debug\netcoreapp3.1\HJSF.ISqlServer.Ass
 G:\HJSFStudio--master\HJSF\ISqlSguar\obj\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
 G:\HJSFStudio--master\HJSF\ISqlSguar\obj\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
 G:\HJSFStudio--master\HJSF\ISqlSguar\obj\Debug\netcoreapp3.1\HJSF.ISqlServer.csproj.CoreCompileInputs.cache
-G:\HJSFStudio--master\HJSF\ISqlSguar\obj\Debug\netcoreapp3.1\HJSF.ISqlServer.csprojAssemblyReference.cache

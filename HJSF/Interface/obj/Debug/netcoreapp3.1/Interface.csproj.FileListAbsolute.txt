@@ -2,11 +2,9 @@ G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\Interface.deps.json
 G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\Interface.dll
 G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\Interface.pdb
 G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
-G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\HJSF.ORM.dll
 G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.dll
 G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.pdb
 G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
-G:\HJSFStudio--master\HJSF\Interface\bin\Debug\netcoreapp3.1\HJSF.ORM.pdb
 G:\HJSFStudio--master\HJSF\Interface\obj\Debug\netcoreapp3.1\Interface.csprojAssemblyReference.cache
 G:\HJSFStudio--master\HJSF\Interface\obj\Debug\netcoreapp3.1\Interface.AssemblyInfoInputs.cache
 G:\HJSFStudio--master\HJSF\Interface\obj\Debug\netcoreapp3.1\Interface.AssemblyInfo.cs

@@ -102,7 +102,7 @@
                     { field: 'parentChannelName', title: '所属模块' },
                     {
                         field: 'channelType', title: '类型', align: 'center', width: 80, templet: function (d) {
-                            return '<span class="layui-badge ' + (d.channelType === 0 ? 'layui-bg-green' : 'layui-bg-cyan') + '">' + (d.channelTypeDescription || '') + '</span>';
+                            return '<span class="layui-badge ' + (d.channelType === 0 ? 'layui-bg-green' : 'layui-bg-cyan') + '">' + (d.channelType==0?"菜单":"按钮") + '</span>';
                         }
                     },
                     { field: 'sort', title: '排序', align: 'center', width: 60 },
@@ -271,7 +271,7 @@
                 d.ButtonList = newButtons;
 
                 if (buttonSuccess) {
-                    //console.log(d);
+                    console.log(d);
                     //return false;
                     return d;
                 }

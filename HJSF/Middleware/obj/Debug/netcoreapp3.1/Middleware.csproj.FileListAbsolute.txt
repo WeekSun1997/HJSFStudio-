@@ -13,7 +13,6 @@ G:\HJSFStudio--master\HJSF\Middleware\obj\Debug\netcoreapp3.1\Middleware.dll
 G:\HJSFStudio--master\HJSF\Middleware\obj\Debug\netcoreapp3.1\Middleware.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Cache.dll
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.Enum.dll
-G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.ORM.dll
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.dll
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Interface.dll
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Services.dll
@@ -21,7 +20,6 @@ G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Utility.dll
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Services.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Cache.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb
-G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.ORM.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Interface.pdb
 G:\HJSFStudio--master\HJSF\Middleware\bin\Debug\netcoreapp3.1\Utility.pdb

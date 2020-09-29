@@ -61,11 +61,10 @@ namespace HJSF.Web
             // 缓存基本信息
             services.Configure<AppSettingModel>(Configuration.GetSection("AppSetting"));
             services.AddScoped<IAuthorizationHandler, Middleware.JwtBearerHandler>();
-            Constant.AppSetting = Configuration.GetSection("AppSetting").Get<AppSettingModel>();
+             Constant.AppSetting = Configuration.GetSection("AppSetting").Get<AppSettingModel>();
 
             services.AddSingleton<IDBServices, DBServices>(x => new DBServices(Configuration["AppSetting:DataBase:ContextConn"]));
-            services.AddScoped<IBaseRepository, BaseRepository>(x => new BaseRepository(Configuration["AppSetting:DataBase:ContextConn"]));
-
+          
             services.AddControllers();
             services.AddMemoryCache();
             #region Jwt
@@ -153,10 +152,10 @@ namespace HJSF.Web
             .AsImplementedInterfaces()
             .EnableInterfaceInterceptors();
             // .InterceptedBy(typeof(RedisAOP));
-            builder.RegisterType<BaseRepository>()
-                            .As<IBaseRepository>()
-                             .PropertiesAutowired()//开始属性注入
-                .InstancePerLifetimeScope();//即为每一个依赖或调用创建一个单一的共享的实例
+            //builder.RegisterType<BaseRepository>()
+            //                .As<IBaseRepository>()
+            //                 .PropertiesAutowired()//开始属性注入
+            //    .InstancePerLifetimeScope();//即为每一个依赖或调用创建一个单一的共享的实例
 
 
 
@@ -201,10 +200,10 @@ namespace HJSF.Web
             app.UseMiddleware<RequestTimeMiddleware>();
             app.UseMiddleware<ExceptionMiddleware>();
             app.UseStaticFiles();
-            app.UseAuthentication();//注意添加这一句，启用验证
+            app.UseAuthentication();
             app.UseAuthorization();
             // 配置授权
-     
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

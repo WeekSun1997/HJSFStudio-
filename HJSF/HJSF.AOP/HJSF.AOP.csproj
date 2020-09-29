@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RedisServer\Cache.csproj" />
+    <ProjectReference Include="..\Utility\Utility.csproj" />
   </ItemGroup>
 
 </Project>

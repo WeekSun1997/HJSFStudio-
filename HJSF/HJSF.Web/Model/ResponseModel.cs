@@ -36,7 +36,7 @@ namespace HJSF.Web.Model
     /// 有数据返回实体
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ResponseModel<T> where T : class
+    public class ResponseModel<T>   
     {
         /// <summary>
         /// 返回异常信息

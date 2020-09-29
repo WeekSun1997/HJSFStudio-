@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "YF5i/1Q84mv1wv4P4Mh1yO7rn+/jsT+RFCC2beyE9+FY3ddboKuimEhU0cwmQ8tCXxRzebANxZ3MquuxbmIMdw==",
+  "dgSpecHash": "QjhccTSWwgC90pJde1cpuWVk9aFP5iM/hKroljczr7zpQ4VjbR6u2vIm9bsQmrsfFyZn/DvZ4id0EI/VSpUNcg==",
   "success": true,
   "projectFilePath": "G:\\HJSFStudio--master\\HJSF\\HJSF.AOP\\HJSF.AOP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\weekSun\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\weekSun\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\weekSun\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.7\\microsoft.extensions.dependencyinjection.3.1.7.nupkg.sha512",
+    "C:\\Users\\weekSun\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.7\\microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
     "C:\\Users\\weekSun\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.5\\microsoft.extensions.logging.abstractions.3.1.5.nupkg.sha512",
     "C:\\Users\\weekSun\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

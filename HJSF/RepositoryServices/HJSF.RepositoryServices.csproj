@@ -5,9 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="sqlSugarCore" Version="5.0.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HJSF.Enum\HJSF.Enum.csproj" />
-    <ProjectReference Include="..\HJSF.ORM\HJSF.ORM.csproj" />
     <ProjectReference Include="..\ISqlSguar\HJSF.ISqlServer.csproj" />
+    <ProjectReference Include="..\Utility\Utility.csproj" />
   </ItemGroup>
 
 </Project>

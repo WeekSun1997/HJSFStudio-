@@ -16,7 +16,7 @@
             默认使用接口
             </summary>
         </member>
-        <member name="M:HJSF.Web.Controllers.BaseApiController`2.#ctor(`1,RepositoryServices.IBaseRepository,ISqlSguar.IDBServices,Cache.ICache)">
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.#ctor(`1,Cache.ICache)">
             <summary>
              初始化
             </summary>
@@ -24,7 +24,7 @@
             <param name="base"></param>
             <param name="db"></param>
         </member>
-        <member name="M:HJSF.Web.Controllers.BaseApiController`2.AddEntity``1(``0)">
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.Add``1(``0)">
             <summary>
             同步添加方法
             </summary>
@@ -41,10 +41,37 @@
             <param name="T"></param>
             <returns></returns>
         </member>
-        <member name="M:HJSF.Web.Controllers.BaseApiController`2.FisrtEntityAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.FisrtEntityAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},SqlSugar.OrderByType)">
             <summary>
-            条件获取第一条数据
+            条件获取第一条数据(异步)
             </summary>
+            <typeparam name="T"></typeparam>
+            <param name="WhereExpression"></param>
+            <param name="OrderExpression"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.FisrtEntity``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            获取第一条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="WhereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.QueryListAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+             <summary>
+            查询集合异步
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="WhereExpression"></param>
+             <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.QueryList``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            查询集合
+            </summary>
+            <typeparam name="T"></typeparam>
             <param name="WhereExpression"></param>
             <returns></returns>
         </member>
@@ -52,6 +79,22 @@
             <summary>
             获取当前操作用户信息，null表示未登录
             </summary>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.QuerySql``1(System.String)">
+            <summary>
+            sql执行查询集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.QuerySqlAsync``1(System.String)">
+            <summary>
+            异步sql执行查询集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sql"></param>
+            <returns></returns>
         </member>
         <member name="T:HJSF.Web.Controllers.DataBaseManagerController">
             <summary>
@@ -63,22 +106,11 @@
             接口对象
             </summary>
         </member>
-        <member name="F:HJSF.Web.Controllers.DataBaseManagerController._repository">
-            <summary>
-            数据库对象
-            </summary>
-        </member>
-        <member name="M:HJSF.Web.Controllers.DataBaseManagerController.#ctor(Interface.IDataBaseServer,RepositoryServices.IBaseRepository)">
+        <member name="M:HJSF.Web.Controllers.DataBaseManagerController.#ctor(Interface.IDataBaseServer)">
             <summary>
             构造方法
             </summary>
             <param name="service"></param>
-        </member>
-        <member name="M:HJSF.Web.Controllers.DataBaseManagerController.LoadDataTable">
-            <summary>
-            加载所有数据表
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:HJSF.Web.Controllers.SysChannelController">
             <summary>
@@ -90,22 +122,12 @@
              业务接口
             </summary>
         </member>
-        <member name="F:HJSF.Web.Controllers.SysChannelController._db">
-            <summary>
-            数据库接口
-            </summary>
-        </member>
-        <member name="F:HJSF.Web.Controllers.SysChannelController._baseRepository">
-            <summary>
-            EF接口
-            </summary>
-        </member>
         <member name="F:HJSF.Web.Controllers.SysChannelController._cache">
             <summary>
             缓存接口
             </summary>
         </member>
-        <member name="M:HJSF.Web.Controllers.SysChannelController.#ctor(Interface.ISysChannelServer,RepositoryServices.IBaseRepository,ISqlSguar.IDBServices,Cache.ICache)">
+        <member name="M:HJSF.Web.Controllers.SysChannelController.#ctor(Interface.ISysChannelServer,Cache.ICache,ISqlSguar.IDBServices)">
             <summary>
             
             </summary>
@@ -120,11 +142,37 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.MenuTreeList">
+            <summary>
+            菜单树-不包含按钮
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:HJSF.Web.Controllers.SysChannelController.GetButtons(HJSF.Web.Model.SysChannel.ButtonSearch)">
             <summary>
             获取指定连接按钮列表
             </summary>
             <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.Index(HJSF.Web.Model.SysChannel.SysChannelSearch)">
+            <summary>
+            获取数据
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.GetSort(System.Int64)">
+            <summary>
+            获取最大排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.Add(HJSF.ORM.Models.HjsfSysChannel)">
+            <summary>
+            添加
+            </summary>
+            <param name="entity"></param>
             <returns></returns>
         </member>
         <member name="T:HJSF.Web.Controllers.SysUserController">
@@ -137,22 +185,8 @@
              业务接口
             </summary>
         </member>
-        <member name="F:HJSF.Web.Controllers.SysUserController._db">
-            <summary>
-            数据库接口
-            </summary>
-        </member>
-        <member name="F:HJSF.Web.Controllers.SysUserController._baseRepository">
-            <summary>
-            EF接口
-            </summary>
-        </member>
-        <member name="F:HJSF.Web.Controllers.SysUserController._cache">
-            <summary>
-            缓存接口
-            </summary>
-        </member>
-        <member name="M:HJSF.Web.Controllers.SysUserController.#ctor(Interface.ISysUserServer,RepositoryServices.IBaseRepository,ISqlSguar.IDBServices,Cache.ICache)">
+        <!-- Badly formed XML comment ignored for member "F:HJSF.Web.Controllers.SysUserController._cache" -->
+        <member name="M:HJSF.Web.Controllers.SysUserController.#ctor(Interface.ISysUserServer,Cache.ICache)">
             <summary>
             
             </summary>
@@ -270,14 +304,95 @@
             <param name="code"></param>
             <param name="Data"></param>
         </member>
+        <member name="T:HJSF.Web.Model.ResponsePageHelper`1">
+            <summary>
+            数据查询分页返回信息类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.Count">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.Page">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.Limit">
+            <summary>
+            每页记录数
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.Data">
+            <summary>
+            返回数据结果
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.Param">
+            <summary>
+            其他附带内容
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.Code">
+            <summary>
+            返回状态
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.ResponsePageHelper`1.Msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="M:HJSF.Web.Model.ResponsePageHelper`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            初始化数据查询分页返回信息类
+            </summary>
+        </member>
         <member name="T:HJSF.Web.Model.SysChannel.ButtonListEntity">
             <summary>
-            获取操作按钮搜索实体
+            按钮列表实体
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.ChannelName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.ChannelLink">
+            <summary>
+            模块链接
             </summary>
         </member>
         <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.EventName">
             <summary>
-            当前按钮连接
+            事件名称（类型为按钮作为点击事件触发名称，类型为菜单作为菜单标识）
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.ClassName">
+            <summary>
+            模块样式
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.IconName">
+            <summary>
+            模块图标
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.ViewLink">
+            <summary>
+            视图链接
+            </summary>
+        </member>
+        <member name="P:HJSF.Web.Model.SysChannel.ButtonListEntity.IsShow">
+            <summary>
+            是否显示
             </summary>
         </member>
         <member name="T:HJSF.Web.Model.SysChannel.ButtonSearch">
@@ -320,49 +435,49 @@
             下级导航
             </summary>
         </member>
-        <member name="T:HJSF.Web.Model.TableEntity">
+        <member name="T:HJSF.Web.Model.SysChannel.SysChannelSearch">
             <summary>
-            数据库表实体
+            搜索实体
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.ColumnName">
+        <member name="P:HJSF.Web.Model.SysChannel.SysChannelSearch.ParentId">
             <summary>
-            列名
+            上级类别
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.DataType">
+        <member name="T:HJSF.Web.Model.TreeEntity">
             <summary>
-            数据类型
+            模块树形实体
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.Length">
+        <member name="P:HJSF.Web.Model.TreeEntity.Id">
             <summary>
-            长度
+            编号
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.Identity">
+        <member name="P:HJSF.Web.Model.TreeEntity.Label">
             <summary>
-            是否自增长
+            文本
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.Key">
+        <member name="P:HJSF.Web.Model.TreeEntity.Disabled">
             <summary>
-            主键
+            是否禁用
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.IsNullable">
+        <member name="P:HJSF.Web.Model.TreeEntity.Checked">
             <summary>
-            是否为空
+            是否选中
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.DefaultValue">
+        <member name="P:HJSF.Web.Model.TreeEntity.Spread">
             <summary>
-            默认值
+            节点是否初始展开
             </summary>
         </member>
-        <member name="P:HJSF.Web.Model.TableEntity.Remark">
+        <member name="P:HJSF.Web.Model.TreeEntity.Children">
             <summary>
-            备注
+            下级模块
             </summary>
         </member>
         <member name="T:HJSF.Web.Program">

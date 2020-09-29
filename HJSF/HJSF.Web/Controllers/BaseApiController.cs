@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryServices;
 using Services;
+using SqlSugar;
 
 namespace HJSF.Web.Controllers
 {
@@ -26,11 +27,11 @@ namespace HJSF.Web.Controllers
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TService"></typeparam>
-    [Route("api/[controller]")]
+    [Route("v1/[controller]")]
     [ApiController]
 
     public class BaseApiController<T, TService> : ControllerBase
-        where T : class, new()
+        where T : IRepositoryEntity, new()
         where TService : IBaseServer<T>
     {
         /// <summary>
@@ -38,9 +39,8 @@ namespace HJSF.Web.Controllers
         /// </summary>
         protected TService _defaultService;
 
-        private IDBServices _db;
 
-        private IBaseRepository _baseRepository;
+
 
         private ICache _cache;
 
@@ -51,11 +51,9 @@ namespace HJSF.Web.Controllers
         /// <param name="service"></param>
         /// <param name="base"></param>
         /// <param name="db"></param>
-        public BaseApiController(TService service, IBaseRepository @base, IDBServices db, ICache cache)
+        public BaseApiController(TService service, ICache cache)
         {
             _defaultService = service;
-            _db = db;
-            _baseRepository = @base;
             _cache = cache;
         }
 
@@ -66,9 +64,22 @@ namespace HJSF.Web.Controllers
         /// <param name="t"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public ResultHelp AddEntity<TEntity>(TEntity t) where TEntity : class
+        [HttpPost("add")]
+        public ResultHelp Add<TEntity>(TEntity t) where TEntity : class, new()
         {
-            return _baseRepository.Insert<TEntity>(t);
+            try
+            {
+                var i = _defaultService.Insert<TEntity>(t);
+                if (i > 0)
+                    return new ResultHelp(Enum.ResponseCode.Success, "添加成功");
+                else
+                    return new ResultHelp(Enum.ResponseCode.Error, "添加失败");
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp(Enum.ResponseCode.Success, ex.Message);
+            }
+
         }
         /// <summary>
         /// 异步添加
@@ -76,24 +87,95 @@ namespace HJSF.Web.Controllers
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="T"></param>
         /// <returns></returns>
-        public async Task<ResultHelp> AddEntityAsync<TEntity>(TEntity T) where TEntity : class
+        public async Task<ResultHelp> AddEntityAsync<TEntity>(TEntity T) where TEntity : class, new()
         {
-            return await _baseRepository.InsertAsync<TEntity>(T);
+            try
+            {
+                var i = await _defaultService.InsertAsync<TEntity>(T);
+                if (i > 0)
+                    return new ResultHelp(Enum.ResponseCode.Success, "添加成功");
+                else
+                    return new ResultHelp(Enum.ResponseCode.Error, "添加失败");
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp(Enum.ResponseCode.Success, ex.Message);
+            }
         }
         /// <summary>
-        /// 条件获取第一条数据
+        /// 条件获取第一条数据(异步)
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="WhereExpression"></param>
+        /// <param name="OrderExpression"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public async Task<ResultHelp<T>> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression, Expression<Func<T, object>> OrderExpression = null, OrderByType type = OrderByType.Asc) where T : class, new()
+        {
+            try
+            {
+                var result = await _defaultService.FisrtEntityAsync<T>(WhereExpression, OrderExpression, type);
+                return new ResultHelp<T>(Enum.ResponseCode.Success, "", result);
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<T>(Enum.ResponseCode.Error, ex.Message, null);
+            }
+        }
+        /// <summary>
+        /// 获取第一条数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="WhereExpression"></param>
         /// <returns></returns>
-        public async Task<ResultHelp<T>> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class
+        public ResultHelp<T> FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class, new()
         {
-
-            return await  _baseRepository.FisrtEntityAsync<T>(WhereExpression);
+            try
+            {
+                var result = _defaultService.FisrtEntity<T>(WhereExpression);
+                return new ResultHelp<T>(Enum.ResponseCode.Success, "", result);
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<T>(Enum.ResponseCode.Error, ex.Message, null);
+            }
         }
 
-        public  ResultHelp<T> FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class
+        /// <summary>
+        ///查询集合异步
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="WhereExpression"></param>
+        /// <returns></returns>
+        public async Task<ResultHelp<List<T>>> QueryListAsync<T>(Expression<Func<T, bool>> WhereExpression) where T : class, new()
         {
-            return  _baseRepository.FisrtEntity<T>(WhereExpression);
+            try
+            {
+                var result = await _defaultService.BaseQueryAsync<T>(WhereExpression);
+                return new ResultHelp<List<T>>(Enum.ResponseCode.Success, "", result);
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<List<T>>(Enum.ResponseCode.Error, ex.Message, null);
+            }
+        }
+        /// <summary>
+        /// 查询集合
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="WhereExpression"></param>
+        /// <returns></returns>
+        public ResultHelp<T> QueryList<T>(Expression<Func<T, bool>> WhereExpression) where T : class, new()
+        {
+            try
+            {
+                var result = _defaultService.FisrtEntity<T>(WhereExpression);
+                return new ResultHelp<T>(Enum.ResponseCode.Success, "", result);
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<T>(Enum.ResponseCode.Error, ex.Message, null);
+            }
         }
 
         /// <summary>
@@ -120,10 +202,49 @@ namespace HJSF.Web.Controllers
             }
             catch (Exception ex)
             {
+
             }
 
             return default;
         }
+        /// <summary>
+        /// sql执行查询集合
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public ResultHelp<List<T>> QuerySql<T>(string sql) where T : class, new()
+        {
+            try
+            {
+                var result = _defaultService.QuerySql<T>(sql);
+                return new ResultHelp<List<T>>(Enum.ResponseCode.Success, "", result);
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<List<T>>(Enum.ResponseCode.Error, ex.Message, null);
+            }
+        }
+
+        /// <summary>
+        /// 异步sql执行查询集合
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public async Task<ResultHelp<List<T>>> QuerySqlAsync<T>(string sql) where T : class, new()
+        {
+            try
+            {
+                var result = await _defaultService.QuerySqlAsync<T>(sql);
+                return new ResultHelp<List<T>>(Enum.ResponseCode.Success, "", result);
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp<List<T>>(Enum.ResponseCode.Error, ex.Message, null);
+            }
+        }
+
 
 
     }

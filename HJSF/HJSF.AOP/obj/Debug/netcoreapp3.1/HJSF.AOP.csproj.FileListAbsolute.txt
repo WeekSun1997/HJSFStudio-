@@ -14,3 +14,7 @@ G:\HJSFStudio--master\HJSF\HJSF.AOP\obj\Debug\netcoreapp3.1\HJSF.AOP.csproj.Core
 G:\HJSFStudio--master\HJSF\HJSF.AOP\obj\Debug\netcoreapp3.1\HJSF.AOP.csproj.CopyComplete
 G:\HJSFStudio--master\HJSF\HJSF.AOP\obj\Debug\netcoreapp3.1\HJSF.AOP.dll
 G:\HJSFStudio--master\HJSF\HJSF.AOP\obj\Debug\netcoreapp3.1\HJSF.AOP.pdb
+G:\HJSFStudio--master\HJSF\HJSF.AOP\bin\Debug\netcoreapp3.1\HJSF.Enum.dll
+G:\HJSFStudio--master\HJSF\HJSF.AOP\bin\Debug\netcoreapp3.1\Utility.dll
+G:\HJSFStudio--master\HJSF\HJSF.AOP\bin\Debug\netcoreapp3.1\Utility.pdb
+G:\HJSFStudio--master\HJSF\HJSF.AOP\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb

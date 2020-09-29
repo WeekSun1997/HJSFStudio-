@@ -1,0 +1,6 @@
+2020-09-20 12:04:10,456 [8] WARN  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - The response has already started, the error page middleware will not be executed. 
+ 
+2020-09-20 12:04:10,886 [12] WARN  Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - No output formatter was found for content types 'application/json; charset=utf-8, application/json; charset=utf-8' to write the response. 
+ 
+2020-09-20 12:04:10,909 [12] WARN  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - The response has already started, the error page middleware will not be executed. 
+ 

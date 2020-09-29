@@ -2,17 +2,14 @@ G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Services.deps.json
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Services.dll
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Services.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.dll
-G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.ORM.dll
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.dll
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Interface.dll
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Interface.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.RepositoryServices.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.ISqlServer.pdb
-G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.ORM.pdb
 G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.csprojAssemblyReference.cache
 G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfoInputs.cache
 G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfo.cs
-G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.csproj.CoreCompileInputs.cache
 G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.csproj.CopyComplete
 G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.dll
 G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.pdb
@@ -24,3 +21,4 @@ G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Cache.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\HJSF.Enum.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Library.pdb
 G:\HJSFStudio--master\HJSF\Services\bin\Debug\netcoreapp3.1\Utility.pdb
+G:\HJSFStudio--master\HJSF\Services\obj\Debug\netcoreapp3.1\Services.csproj.CoreCompileInputs.cache
