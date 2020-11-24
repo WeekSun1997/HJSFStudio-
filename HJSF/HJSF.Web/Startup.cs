@@ -61,7 +61,7 @@ namespace HJSF.Web
             // 缓存基本信息
             services.Configure<AppSettingModel>(Configuration.GetSection("AppSetting"));
             services.AddScoped<IAuthorizationHandler, Middleware.JwtBearerHandler>();
-             Constant.AppSetting = Configuration.GetSection("AppSetting").Get<AppSettingModel>();
+            Constant.AppSetting = Configuration.GetSection("AppSetting").Get<AppSettingModel>();
 
             services.AddSingleton<IDBServices, DBServices>(x => new DBServices(Configuration["AppSetting:DataBase:ContextConn"]));
           
@@ -89,7 +89,7 @@ namespace HJSF.Web
             // 添加Session
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(30);
+                options.IdleTimeout = TimeSpan.FromSeconds(3000);
                 options.Cookie.HttpOnly = true;
             });
           
@@ -138,8 +138,8 @@ namespace HJSF.Web
         /// <param name="builder"></param>
         public void ConfigureContainer(ContainerBuilder builder)
         {
-
             builder.RegisterType<RedisAOP>();
+            builder.RegisterType<EntityAop>();
             builder.RegisterType<RedisHelp>()
                 .As<ICache>()
                  .WithParameter("_connectionString", Configuration["AppSetting:Redis:RedisHostConnection"])
@@ -150,8 +150,9 @@ namespace HJSF.Web
             builder.RegisterAssemblyTypes(services, repository).
             Where(x => x.Name.EndsWith("Server", StringComparison.OrdinalIgnoreCase))
             .AsImplementedInterfaces()
-            .EnableInterfaceInterceptors();
-            // .InterceptedBy(typeof(RedisAOP));
+            .EnableInterfaceInterceptors()
+             .InterceptedBy(typeof(EntityAop))
+            .InterceptedBy(typeof(RedisAOP));
             //builder.RegisterType<BaseRepository>()
             //                .As<IBaseRepository>()
             //                 .PropertiesAutowired()//开始属性注入

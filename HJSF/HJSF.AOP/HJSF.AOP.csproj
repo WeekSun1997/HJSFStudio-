@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RedisServer\Cache.csproj" />
+    <ProjectReference Include="..\RepositoryServices\HJSF.RepositoryServices.csproj" />
     <ProjectReference Include="..\Utility\Utility.csproj" />
   </ItemGroup>
 

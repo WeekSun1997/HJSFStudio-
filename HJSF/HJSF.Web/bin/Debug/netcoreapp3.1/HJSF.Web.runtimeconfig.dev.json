@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\weekSun\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\weekSun\\.nuget\\packages",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "C:\\Users\\WeekSun\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\WeekSun\\.nuget\\packages"
     ]
   }
 }

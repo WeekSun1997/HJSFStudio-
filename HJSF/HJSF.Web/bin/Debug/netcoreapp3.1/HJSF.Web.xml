@@ -96,6 +96,23 @@
             <param name="sql"></param>
             <returns></returns>
         </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.BaseUpdateAsync``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="t"></param>
+            <param name="UpdateExpression"></param>
+            <param name="WhereExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.BaseApiController`2.BaseRemoveAsync(System.Collections.Generic.List{`0})">
+            <summary>
+            删除
+            </summary>
+            <param name="entityList"></param>
+            <returns></returns>
+        </member>
         <member name="T:HJSF.Web.Controllers.DataBaseManagerController">
             <summary>
             数据库操作控制器
@@ -127,12 +144,16 @@
             缓存接口
             </summary>
         </member>
+        <member name="F:HJSF.Web.Controllers.SysChannelController._dB">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:HJSF.Web.Controllers.SysChannelController.#ctor(Interface.ISysChannelServer,Cache.ICache,ISqlSguar.IDBServices)">
             <summary>
             
             </summary>
             <param name="server"></param>
-            <param name="base"></param>
             <param name="dB"></param>
             <param name="cache"></param>
         </member>
@@ -173,6 +194,27 @@
             添加
             </summary>
             <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.edit(System.Int64)">
+            <summary>
+            修改
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.edit(HJSF.ORM.Models.HjsfSysChannel)">
+            <summary>
+            修改
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HJSF.Web.Controllers.SysChannelController.remove(System.Int64[])">
+            <summary>
+            修改
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:HJSF.Web.Controllers.SysUserController">

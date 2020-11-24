@@ -4,7 +4,7 @@ using System;
 
 namespace Interface
 {
-    public interface IBaseServer<T>: IBaseRepository<T> where T: IRepositoryEntity
+    public interface IBaseServer<T>: IBaseRepository<T> where T: class
     {
       
     }

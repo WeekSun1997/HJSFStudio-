@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Utility.AttributeEntity
+namespace Utility.Attributes
 {
    public class CacheAttribute : Attribute
     {

@@ -1,0 +1,10 @@
+2020-10-22 23:40:14,843 [9] WARN  Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - No output formatter was found for content types 'application/json; charset=utf-8, application/json; charset=utf-8' to write the response. 
+ 
+2020-10-22 23:40:14,850 [19] WARN  Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - No output formatter was found for content types 'application/json; charset=utf-8, application/json; charset=utf-8' to write the response. 
+ 
+2020-10-22 23:40:14,904 [19] WARN  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - The response has already started, the error page middleware will not be executed. 
+ 
+2020-10-22 23:40:14,919 [9] WARN  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - The response has already started, the error page middleware will not be executed. 
+ 
+2020-10-22 23:40:14,933 [20] WARN  Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - The response has already started, the error page middleware will not be executed. 
+ 

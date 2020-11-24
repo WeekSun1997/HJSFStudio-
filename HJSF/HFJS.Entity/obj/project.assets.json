@@ -27,8 +27,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\weekSun\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\WeekSun\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -36,14 +35,11 @@
       "projectUniqueName": "G:\\HJSFStudio--master\\HJSF\\HFJS.Entity\\HFJS.Entity.csproj",
       "projectName": "HFJS.Entity",
       "projectPath": "G:\\HJSFStudio--master\\HJSF\\HFJS.Entity\\HFJS.Entity.csproj",
-      "packagesPath": "C:\\Users\\weekSun\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\WeekSun\\.nuget\\packages\\",
       "outputPath": "G:\\HJSFStudio--master\\HJSF\\HFJS.Entity\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\weekSun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WeekSun\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -55,6 +51,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj": {
               "projectPath": "G:\\HJSFStudio--master\\HJSF\\HJSF.Enum\\HJSF.Enum.csproj"
@@ -70,6 +67,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -85,7 +83,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

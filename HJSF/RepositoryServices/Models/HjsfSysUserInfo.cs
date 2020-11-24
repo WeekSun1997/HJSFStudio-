@@ -1,4 +1,5 @@
 ﻿using HJSF.RepositoryServices;
+using HJSF.RepositoryServices.Models;
 using SqlSugar;
 using System;
 using System.Collections.Generic;

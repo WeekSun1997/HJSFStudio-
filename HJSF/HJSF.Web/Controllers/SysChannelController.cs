@@ -27,20 +27,23 @@ namespace HJSF.Web.Controllers
        ///  业务接口
        /// </summary>
         public ISysChannelServer _server;
- 
+
         /// <summary>
         /// 缓存接口
         /// </summary>
         public ICache _cache;
+        /// <summary>
+        /// 
+        /// </summary>
         public IDBServices _dB;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="server"></param>
-        /// <param name="base"></param>
+
         /// <param name="dB"></param>
         /// <param name="cache"></param>
-        public SysChannelController(ISysChannelServer @server,  ICache @cache,IDBServices dB)
+        public SysChannelController(ISysChannelServer @server, ICache @cache, IDBServices dB)
             : base(server, @cache)
         {
             _server = @server;
@@ -200,8 +203,41 @@ namespace HJSF.Web.Controllers
         /// <param name="entity"></param>
         /// <returns></returns>
         [HttpPost("add")]
-        public async Task<ResultHelp> Add([FromForm]HjsfSysChannel entity)
+        public async Task<ResultHelp> Add([FromForm] HjsfSysChannel entity)
             => await base.AddEntityAsync(entity);
 
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("edit/{id}")]
+        public async Task<ResultHelp<HjsfSysChannel>> edit([FromRoute] long id)
+        {
+            var entity = await base.FisrtEntityAsync<HjsfSysChannel>(a => a.Id == id);
+            return entity;
+        }
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPost("edit")]
+        public async Task<ResultHelp> edit([FromForm] HjsfSysChannel Entity)
+         => await base.BaseUpdateAsync(Entity, a => a.Id == Entity.Id, null);
+
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost("remove")]
+        public async Task<ResultHelp> remove([FromForm] long[] id)
+        {
+            var entity = await base._defaultService.BaseQueryAsync<HjsfSysChannel>(a => id.Contains(a.Id));
+            return await base.BaseRemoveAsync(entity);
+        }
     }
 }

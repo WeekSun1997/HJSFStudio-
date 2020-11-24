@@ -1,4 +1,5 @@
 ﻿using HJSF.RepositoryServices;
+using HJSF.RepositoryServices.Models;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Utility.WebModel
     /// <summary>
     /// 数据库表实体
     /// </summary>
-    public class TableEntity: IRepositoryEntity
+    public class TableEntity: BaseEntity
     {
         /// <summary>
         /// id

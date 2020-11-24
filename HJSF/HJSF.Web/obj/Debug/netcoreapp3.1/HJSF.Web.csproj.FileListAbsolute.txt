@@ -1,6 +1,5 @@
 G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
 G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\appsettings.json
-G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\HJSF.Web.exe
 G:\HJSFStudio--master\HJSF\HJSF.Web\obj\Debug\netcoreapp3.1\HJSF.Web.AssemblyInfoInputs.cache
 G:\HJSFStudio--master\HJSF\HJSF.Web\obj\Debug\netcoreapp3.1\HJSF.Web.AssemblyInfo.cs
@@ -111,3 +110,4 @@ G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\runtimes\osx-x64\nat
 G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 G:\HJSFStudio--master\HJSF\HJSF.Web\bin\Debug\netcoreapp3.1\runtimes\win8-arm\native\e_sqlite3.dll
+G:\HJSFStudio--master\HJSF\HJSF.Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\HJSF.Web.styles.css

@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Utility.Attributes;
 
 namespace HJSF.RepositoryServices.Models
 {
-    public class BaseEntity:IRepositoryEntity
+    public class BaseEntity : IRepositoryEntity
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public long Id { get; set; }
@@ -13,8 +14,11 @@ namespace HJSF.RepositoryServices.Models
         public DateTime CreateDate { get; set; }
         public long CreateUserId { get; set; }
         public string CreateUserName { get; set; }
+        [IgnoreUpdate]
         public DateTime? UpdateDate { get; set; }
+        [IgnoreUpdate]
         public long? UpdateUserId { get; set; }
+        [IgnoreUpdate]
         public string UpdateUserName { get; set; }
     }
 }

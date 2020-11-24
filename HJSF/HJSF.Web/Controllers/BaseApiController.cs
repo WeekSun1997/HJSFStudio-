@@ -8,6 +8,7 @@ using Cache;
 using HFJS.Entity.ResponseModel;
 using HJSF.ORM.Models;
 using HJSF.RepositoryServices;
+using HJSF.RepositoryServices.Models;
 using HJSF.Web.Model.Login;
 using Interface;
 using ISqlSguar;
@@ -31,16 +32,13 @@ namespace HJSF.Web.Controllers
     [ApiController]
 
     public class BaseApiController<T, TService> : ControllerBase
-        where T : IRepositoryEntity, new()
+        where T : class, new()
         where TService : IBaseServer<T>
     {
         /// <summary>
         /// 默认使用接口
         /// </summary>
         protected TService _defaultService;
-
-
-
 
         private ICache _cache;
 
@@ -70,7 +68,7 @@ namespace HJSF.Web.Controllers
             try
             {
                 var i = _defaultService.Insert<TEntity>(t);
-                if (i > 0)
+                if (i)
                     return new ResultHelp(Enum.ResponseCode.Success, "添加成功");
                 else
                     return new ResultHelp(Enum.ResponseCode.Error, "添加失败");
@@ -92,7 +90,7 @@ namespace HJSF.Web.Controllers
             try
             {
                 var i = await _defaultService.InsertAsync<TEntity>(T);
-                if (i > 0)
+                if (i)
                     return new ResultHelp(Enum.ResponseCode.Success, "添加成功");
                 else
                     return new ResultHelp(Enum.ResponseCode.Error, "添加失败");
@@ -244,7 +242,46 @@ namespace HJSF.Web.Controllers
                 return new ResultHelp<List<T>>(Enum.ResponseCode.Error, ex.Message, null);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="t"></param>
+        /// <param name="UpdateExpression"></param>
+        /// <param name="WhereExpression"></param>
+        /// <returns></returns>
+        public async Task<ResultHelp> BaseUpdateAsync<TEntity>(TEntity t, Expression<Func<TEntity, bool>> UpdateExpression, Expression<Func<TEntity, bool>> WhereExpression = null)
+        where TEntity : class, new()
+        {
 
+            try
+            {
+                var i = await _defaultService.EditAsync<TEntity>(t, WhereExpression, UpdateExpression);
+                if (i)
+                    return new ResultHelp(Enum.ResponseCode.Success, "修改成功");
+                else
+                    return new ResultHelp(Enum.ResponseCode.Error, "修改失败");
+            }
+            catch (Exception ex)
+            {
+                return new ResultHelp(Enum.ResponseCode.Success, ex.Message);
+            }
+
+        }
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="entityList"></param>
+        /// <returns></returns>
+        public async Task<ResultHelp> BaseRemoveAsync(List<T> entityList)
+        {
+
+            var result = await _defaultService.RemoveAsync(entityList);
+            if (result)
+                return new ResultHelp(Enum.ResponseCode.Success, "删除成功");
+            else
+                return new ResultHelp(Enum.ResponseCode.Error, "删除失败");
+        }
 
 
     }

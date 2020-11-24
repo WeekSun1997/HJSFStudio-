@@ -22,7 +22,11 @@ namespace HJSF.ORM.Models
         public string IconName { get; set; }
         public bool IsShow { get; set; }
 
-        
+        /// <summary>
+        /// 附加-按钮类型描述
+        /// </summary>                                                                                                                                                                                                                                                                                                                                               
+        [SugarColumn(IsIgnore = true)]
+        public List<HjsfSysChannel> ButtonList { get; set; }
 
         /// <summary>
         /// 上级模块名称

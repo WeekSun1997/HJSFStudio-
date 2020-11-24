@@ -92,7 +92,7 @@
             channelEvent: 'syschannel',
             channelName: '系统模块',
             editIsLoad: true,
-            detailIsLoad: false,
+            detailIsLoad: true,
             tableInfo: {
                 cols: [[
                     { type: 'checkbox', fixed: 'left', width: 60 },

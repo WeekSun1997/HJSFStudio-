@@ -12,7 +12,7 @@ using HJSF.RepositoryServices.Models;
 
 namespace RepositoryServices
 {
-    public interface IBaseRepository<T> where T: IRepositoryEntity
+    public interface IBaseRepository<T> where T: class
     {
         string OnBefore();
         /// <summary>
@@ -31,42 +31,42 @@ namespace RepositoryServices
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        int Insert<T>(T t) where T : class, new();
+        bool Insert<T>(T t) where T : class, new();
         /// <summary>
         /// 异步插入
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<int> InsertAsync<T>(T t) where T : class, new();
+        Task<bool> InsertAsync<T>(T t) where T : class, new();
         /// <summary>
         /// 修改数据
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        int Edit<T>(T t, Expression<Func<T, bool>> UpdateExpression, Expression<Func<T, bool>> WhereExpression) where T : class, new();
+        bool Edit<T>(T t, Expression<Func<T, bool>> UpdateExpression, Expression<Func<T, bool>> WhereExpression) where T : class, new();
         /// <summary>
         /// 异步修改
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<int> EditAsync<T>(T t, Expression<Func<T, bool>> UpdateExpression, Expression<Func<T, bool>> WhereExpression) where T : class, new();
+        Task<bool> EditAsync<T>(T t, Expression<Func<T, bool>> WhereExpression, Expression<Func<T, bool>> UpdateExpression = null) where T : class, new();
         /// <summary>
         /// 删除数据
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        int Remove<T>(T t) where T : class, new();
+        bool Remove<T>(List<T> t) where T : class, new();
         /// <summary>
         /// 异步删除
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<int> RemoveAsync<T>(T t) where T : class, new();
+        Task<bool> RemoveAsync<T>(List<T> t) where T : class, new();
 
         /// <summary>
         /// EF查询集合

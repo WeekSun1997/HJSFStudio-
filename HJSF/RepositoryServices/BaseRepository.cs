@@ -11,13 +11,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Utility;
+using Utility.Attributes;
 
 namespace RepositoryServices
 {
-    public class BaseRepository<T>: IBaseRepository<T> where T : IRepositoryEntity, new()
+    public class BaseRepository<T> : IBaseRepository<T> where T : class, new()
     {
 
         public SqlSugarClient db;
@@ -266,22 +268,37 @@ namespace RepositoryServices
         //    throw new NotImplementedException();
         //}
         #endregion
-        public int Edit<T>(T t, Expression<Func<T, bool>> UpdateExpression, Expression<Func<T, bool>> WhereExpression) where T : class, new()
+
+        [EditEntity]
+        public virtual bool Edit<T>(T t, Expression<Func<T, bool>> UpdateExpression, Expression<Func<T, bool>> WhereExpression) where T : class, new()
         {
-            return db.Updateable<T>(t).SetColumns(UpdateExpression).Where(WhereExpression).ExecuteCommand();
+
+            string[] _ignoreUpdateProperties = typeof(T).GetProperties().Where(o => o.GetCustomAttribute(typeof(IgnoreUpdateAttribute)) != null).Select(o => o.Name).ToArray();
+            var up = db.Updateable<T>(t).SetColumnsIF(UpdateExpression != null, UpdateExpression)
+                .Where(WhereExpression);
+            if (_ignoreUpdateProperties.Any())
+                up.IgnoreColumns(_ignoreUpdateProperties);
+            return up.ExecuteCommand() > 0;
         }
 
-        public Task<int> EditAsync<T>(T t, Expression<Func<T, bool>> UpdateExpression, Expression<Func<T, bool>> WhereExpression) where T : class, new()
+        [EditEntity]
+        public virtual async Task<bool> EditAsync<T>(T t, Expression<Func<T, bool>> WhereExpression, Expression<Func<T, bool>> UpdateExpression = null) where T : class, new()
         {
-            return db.Updateable<T>(t).SetColumns(UpdateExpression).Where(WhereExpression).ExecuteCommandAsync();
+            string[] _ignoreUpdateProperties = typeof(T).GetProperties().Where(o => o.GetCustomAttribute(typeof(IgnoreUpdateAttribute)) != null).Select(o => o.Name).ToArray();
+            var up = db.Updateable<T>(t).SetColumnsIF(UpdateExpression != null, UpdateExpression)
+                .Where(WhereExpression);
+            if (_ignoreUpdateProperties.Any())
+                up.IgnoreColumns(_ignoreUpdateProperties);
+            return await up.ExecuteCommandAsync() > 0;
         }
 
-        public T FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class
-        { 
+        public virtual T FisrtEntity<T>(Expression<Func<T, bool>> WhereExpression) where T : class
+        {
             return db.Queryable<T>().WhereIF(WhereExpression != null, WhereExpression).First();
         }
 
-        public async Task<T> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression, Expression<Func<T, object>> expression=null, OrderByType type = OrderByType.Asc) where T : class
+
+        public async Task<T> FisrtEntityAsync<T>(Expression<Func<T, bool>> WhereExpression, Expression<Func<T, object>> expression = null, OrderByType type = OrderByType.Asc) where T : class
         {
             return await db.Queryable<T>().WhereIF(WhereExpression != null, WhereExpression)
                 .OrderByIF(expression != null, expression, type)
@@ -289,15 +306,15 @@ namespace RepositoryServices
                 .FirstAsync();
 
         }
-
-        public int Insert<T>(T t) where T : class, new()
+        [InsertEntity]
+        public virtual bool Insert<T>(T t) where T : class, new()
         {
-            return db.Insertable<T>(t).ExecuteCommand();
+            return db.Insertable<T>(t).ExecuteCommand() > 0;
         }
-
-        public virtual Task<int> InsertAsync<T>(T t) where T : class, new()
+        [InsertEntity]
+        public virtual async Task<bool> InsertAsync<T>(T t) where T : class, new()
         {
-            return db.Insertable<T>(t).ExecuteCommandAsync();
+            return await db.Insertable<T>(t).ExecuteCommandAsync() > 0;
         }
 
         public string OnAlert()
@@ -310,31 +327,31 @@ namespace RepositoryServices
             throw new NotImplementedException();
         }
 
-        public Task<List<T>> BaseQueryAsync<T>(Expression<Func<T, bool>> WhereExpression = null) where T : class
+        public virtual Task<List<T>> BaseQueryAsync<T>(Expression<Func<T, bool>> WhereExpression = null) where T : class
         {
             return db.Queryable<T>().WhereIF(WhereExpression != null, WhereExpression).ToListAsync();
         }
 
 
-        public async Task<List<T>> QuerySqlAsync<T>(string sql) where T : class, new()
+        public virtual async Task<List<T>> QuerySqlAsync<T>(string sql) where T : class, new()
         {
             return await db.SqlQueryable<T>(sql).ToListAsync();
         }
-        public List<T> QuerySql<T>(string sql) where T : class, new()
+        public virtual List<T> QuerySql<T>(string sql) where T : class, new()
         {
             return db.SqlQueryable<T>(sql).ToList();
         }
-        public int Remove<T>(T t) where T : class, new()
+        public virtual bool Remove<T>(List<T> t) where T : class, new()
         {
-            return db.Deleteable<T>(t).ExecuteCommand();
+            return db.Deleteable<T>(t).ExecuteCommand() > 0;
         }
 
-        public Task<int> RemoveAsync<T>(T t) where T : class, new()
+        public virtual async Task<bool> RemoveAsync<T>(List<T> t) where T : class, new()
         {
-            return db.Deleteable<T>(t).ExecuteCommandAsync();
+            return await db.Deleteable<T>(t).ExecuteCommandAsync() > 0;
         }
 
-        public List<T> BaseQuery<T>(Expression<Func<T, bool>> WhereExpression = null) where T : class
+        public virtual List<T> BaseQuery<T>(Expression<Func<T, bool>> WhereExpression = null) where T : class
         {
             return db.Queryable<T>().WhereIF(WhereExpression != null, WhereExpression).ToList();
         }

@@ -10,14 +10,11 @@
         "projectUniqueName": "G:\\HJSFStudio--master\\HJSF\\ISqlSguar\\HJSF.ISqlServer.csproj",
         "projectName": "HJSF.ISqlServer",
         "projectPath": "G:\\HJSFStudio--master\\HJSF\\ISqlSguar\\HJSF.ISqlServer.csproj",
-        "packagesPath": "C:\\Users\\weekSun\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\WeekSun\\.nuget\\packages\\",
         "outputPath": "G:\\HJSFStudio--master\\HJSF\\ISqlSguar\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\weekSun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WeekSun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "System.Data.SqlClient": {
               "target": "Package",
@@ -61,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -71,14 +70,11 @@
         "projectUniqueName": "G:\\HJSFStudio--master\\HJSF\\Library\\Library.csproj",
         "projectName": "Library",
         "projectPath": "G:\\HJSFStudio--master\\HJSF\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\weekSun\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\WeekSun\\.nuget\\packages\\",
         "outputPath": "G:\\HJSFStudio--master\\HJSF\\Library\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\weekSun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WeekSun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,6 +86,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "G:\\HJSFStudio--master\\HJSF\\ISqlSguar\\HJSF.ISqlServer.csproj": {
                 "projectPath": "G:\\HJSFStudio--master\\HJSF\\ISqlSguar\\HJSF.ISqlServer.csproj"
@@ -105,6 +102,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -126,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
